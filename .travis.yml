@@ -1,7 +1,7 @@
 sudo: required
 lannguage: swift
 osx_image: xcode7.2.1
-xcode_project: GlobalMessageService.xcworkspace
+xcode_workspace: GlobalMessageService.xcworkspace
 xcode_scheme: GlobalMessageService
 xcode_sdk: iphonesimulator9.2
 
