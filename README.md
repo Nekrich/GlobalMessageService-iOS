@@ -18,7 +18,7 @@ pre_install do |installer|
   def installer.verify_no_static_framework_transitive_dependencies; end
 end
 
-pod 'GlobalMessageService', :git => 'https://github.com/Nekrich/GMS_Test.git', :tag => '0.0.1'
+pod 'GlobalMessageService', :git => 'https://github.com/GlobalMessageServicesAG/GlobalMessageService-iOS.git', :tag => '0.0.1'
 ```
 
 Then, run the following command:
@@ -28,7 +28,7 @@ $ pod install
 ```
 
 #### Add files
-Add [```GMSGoogleCloudMessagingDelegate.swift```](https://github.com/Nekrich/GMS_Test/tree/master/targetFiles/GMSGoogleCloudMessagingDelegate.swift) file to your project
+Add [```GMSGoogleCloudMessagingDelegate.swift```](https://github.com/GlobalMessageServicesAG/GlobalMessageService-iOS/tree/master/targetFiles/GMSGoogleCloudMessagingDelegate.swift) file to your project
 
 #### Configure target
 Disable bitcode (set `ENABLE_BITCODE` to `false`) in build settings for your target
