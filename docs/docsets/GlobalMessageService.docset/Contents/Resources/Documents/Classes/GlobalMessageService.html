@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GlobalMessageService Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/GlobalMessageService" class="dashAnchor"></a>
+    <a title="GlobalMessageService Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">GlobalMessageService Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">GlobalMessageService Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        GlobalMessageService Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageService.html">GlobalMessageService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceCoreDataHelper.html">GlobalMessageServiceCoreDataHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceInboxViewController.html">GlobalMessageServiceInboxViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceMessageJSQ.html">GlobalMessageServiceMessageJSQ</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceMessagesFetcher.html">GlobalMessageServiceMessagesFetcher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/GlobalMessageServiceError.html">GlobalMessageServiceError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/GlobalMessageServiceMessageType.html">GlobalMessageServiceMessageType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF20GlobalMessageServiceoi2eeFTVS_27GlobalMessageServiceMessageS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CustomLocalizedDescriptionConvertible.html">CustomLocalizedDescriptionConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/GlobalMessageServiceGoogleCloudMessagingHelper.html">GlobalMessageServiceGoogleCloudMessagingHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/GlobalMessageServiceRemoteNotificationReciever.html">GlobalMessageServiceRemoteNotificationReciever</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/GlobalMessageServiceMessage.html">GlobalMessageServiceMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GlobalMessageServicePushNotification.html">GlobalMessageServicePushNotification</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>GlobalMessageService</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">GlobalMessageService</span></code></pre>
+
+                </div>
+              </div>
+            <p>Main <code>GlobalMessageService.framework</code> facade class
+- Provides subscriber regstration &amp; subscriber phone/e-mail update
+- Handles remote notifications</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService20GlobalMessageService24updateSubscriberLocationFMS0_FTGSqCSo10CLLocation_17completionHandlerGSqFGO9Alamofire6ResultSbOS_25GlobalMessageServiceError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/updateSubscriberLocation(_:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService20GlobalMessageService24updateSubscriberLocationFMS0_FTGSqCSo10CLLocation_17completionHandlerGSqFGO9Alamofire6ResultSbOS_25GlobalMessageServiceError_T___T_">updateSubscriberLocation(_:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates subscriber&rsquo;s location on Global Message Services servers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateSubscriberLocation</span><span class="p">(</span>
+    <span class="nv">location</span><span class="p">:</span> <span class="kt">CLLocation</span><span class="p">?,</span>
+    <span class="n">completionHandler</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">GlobalMessageServiceError</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="o">.</span><span class="kt">None</span><span class="p">)</span> <span class="c1">// swiftlint:disable:this line_length</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>location</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>CLLocation</code> containing subscriber&rsquo;s location. Can be <code>nil</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The code to be executed once the request has finished. (optional). This block takes no parameters. Returns <code>Result</code> <code>&lt;Bool, GlobalMessageServiceError&gt;</code>, where <code>result.value</code> is always <code>true</code> if there no error occurred, otherwise see <code>result.error</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService20GlobalMessageService16allowRecievePushFMS0_FTSb17completionHandlerGSqFGO9Alamofire6ResultSbOS_25GlobalMessageServiceError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/allowRecievePush(_:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService20GlobalMessageService16allowRecievePushFMS0_FTSb17completionHandlerGSqFGO9Alamofire6ResultSbOS_25GlobalMessageServiceError_T___T_">allowRecievePush(_:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates subscriber&rsquo;s location on Global Message Services servers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">allowRecievePush</span><span class="p">(</span>
+    <span class="nv">allowPush</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
+    <span class="n">completionHandler</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">GlobalMessageServiceError</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="o">.</span><span class="kt">None</span><span class="p">)</span> <span class="c1">// swiftlint:disable:this line_length</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>allowPush</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Bool</code>. <code>true</code> - allow recieve remote push notification, <code>false</code> - deny recieve remote push notification</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The code to be executed once the request has finished. (optional). This block takes no parameters. Returns <code>Result</code> <code>&lt;Bool, GlobalMessageServiceError&gt;</code>, where <code>result.value</code> is always <code>true</code> if there no error occurred, otherwise see <code>result.error</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService20GlobalMessageService13addSubscriberFMS0_FT5emailSS5phoneGSqVSs5Int64_17completionHandlerGSqFGO9Alamofire6ResultVSs6UInt64OS_25GlobalMessageServiceError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/addSubscriber(email:phone:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService20GlobalMessageService13addSubscriberFMS0_FT5emailSS5phoneGSqVSs5Int64_17completionHandlerGSqFGO9Alamofire6ResultVSs6UInt64OS_25GlobalMessageServiceError_T___T_">addSubscriber(email:phone:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a new subscriber on Global Message Services servers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">addSubscriber</span><span class="p">(</span>
+    <span class="n">email</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">phone</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">?,</span>
+    <span class="n">completionHandler</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">UInt64</span><span class="p">,</span> <span class="kt">GlobalMessageServiceError</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="o">.</span><span class="kt">None</span><span class="p">)</span> <span class="c1">// swiftlint:disable:this line_length</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>email</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>String</code> containing subscriber&rsquo;s e-mail address</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>phone</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Int64?</code> containing subscriber&rsquo;s phone number. Can be <code>nil</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The code to be executed once the request has finished. (optional). This block takes no parameters. Returns <code>Result</code> <code>&lt;UInt64, GlobalMessageServiceError&gt;</code>, where <code>result.value</code> contains <code>UInt64</code> Global Message Services device token if there no error occurred, otherwise see <code>result.error</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService20GlobalMessageService20updateSubscriberInfoFMS0_FT5emailSS5phoneGSqVSs5Int64_17completionHandlerGSqFGO9Alamofire6ResultSbOS_25GlobalMessageServiceError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/updateSubscriberInfo(email:phone:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService20GlobalMessageService20updateSubscriberInfoFMS0_FT5emailSS5phoneGSqVSs5Int64_17completionHandlerGSqFGO9Alamofire6ResultSbOS_25GlobalMessageServiceError_T___T_">updateSubscriberInfo(email:phone:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates subscriber&rsquo;s info on Global Message Services servers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateSubscriberInfo</span><span class="p">(</span>
+    <span class="n">email</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">phone</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">?,</span>
+    <span class="n">completionHandler</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">GlobalMessageServiceError</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="o">.</span><span class="kt">None</span><span class="p">)</span> <span class="c1">// swiftlint:disable:this line_length</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>email</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>String</code> containing subscriber&rsquo;s e-mail address</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>phone</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Int64?</code> containing subscriber&rsquo;s phone number. Can be <code>nil</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The code to be executed once the request has finished. (optional). This block takes no parameters. Returns <code>Result</code> <code>&lt;Bool, GlobalMessageServiceError&gt;</code>, where <code>result.value</code> is always <code>true</code> if there no error occurred, otherwise see <code>result.error</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService20GlobalMessageService14updateGCMTokenFMS0_FTGSqSS_17completionHandlerGSqFGO9Alamofire6ResultSbOS_25GlobalMessageServiceError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/updateGCMToken(_:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService20GlobalMessageService14updateGCMTokenFMS0_FTGSqSS_17completionHandlerGSqFGO9Alamofire6ResultSbOS_25GlobalMessageServiceError_T___T_">updateGCMToken(_:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates Google Cloud Messaging token on Global Message Services servers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateGCMToken</span><span class="p">(</span>
+    <span class="nv">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+    <span class="n">completionHandler</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">GlobalMessageServiceError</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="o">.</span><span class="kt">None</span><span class="p">)</span> <span class="c1">// swiftlint:disable:this line_length</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>String?</code> containing Google Cloud Messaging token</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The code to be executed once the request has finished. (optional). This block takes no parameters. Returns <code>Result</code><code>&lt;Bool, GlobalMessageServiceError&gt;</code>, where <code>result.value</code> is always <code>true</code> if there no error occurred, otherwise see <code>result.error</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC20GlobalMessageService20GlobalMessageService10authorizedSb"></a>
+                    <a name="//apple_ref/swift/Variable/authorized" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC20GlobalMessageService20GlobalMessageService10authorizedSb">authorized</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Flag indicates if subscriber athorized or not</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">internal</span> <span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">authorized</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService20GlobalMessageService7signOutFMS0_FT_Sb"></a>
+                    <a name="//apple_ref/swift/Method/signOut()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService20GlobalMessageService7signOutFMS0_FT_Sb">signOut()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sign outs current user and cleares all fetched data.
+- Returns: <code>true</code> if sign out successful, <code>false</code> otherwise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">signOut</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if sign out successful, <code>false</code> otherwise</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService20GlobalMessageService24updateRegisteredGCMtokenFMS0_FGSqSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/updateRegisteredGCMtoken(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService20GlobalMessageService24updateRegisteredGCMtokenFMS0_FGSqSS_T_">updateRegisteredGCMtoken(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates registered Google Message Service device token
+- Parameter gcmToken: <code>String</code> with new Google Message Service device token</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateRegisteredGCMtoken</span><span class="p">(</span><span class="nv">gcmToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>gcmToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>String</code> with new Google Message Service device token</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService20GlobalMessageService48didRegisterForRemoteNotificationsWithDeviceTokenFMS0_FCSo6NSDataT_"></a>
+                    <a name="//apple_ref/swift/Method/didRegisterForRemoteNotificationsWithDeviceToken(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService20GlobalMessageService48didRegisterForRemoteNotificationsWithDeviceTokenFMS0_FCSo6NSDataT_">didRegisterForRemoteNotificationsWithDeviceToken(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles registration for push-notification receiving</p>
+
+<p>Call this func in </p>
+
+<p><code>func application(application: UIApplication, 
+didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData)</code></p>
+
+<p>in your <code>AppDelegate</code> module</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter deviceToken: registered remote Apple Push-notifications device doken
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">didRegisterForRemoteNotificationsWithDeviceToken</span><span class="p">(</span>
+    <span class="nv">deviceToken</span><span class="p">:</span> <span class="kt">NSData</span><span class="p">)</span> <span class="c1">// swiftlint:disable:this opening_brace</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>deviceToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>registered remote Apple Push-notifications device doken</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService20GlobalMessageService28didReceiveRemoteNotificationFMS0_FGVSs10DictionaryCSo8NSObjectPSs9AnyObject__GSqVS_36GlobalMessageServicePushNotification_"></a>
+                    <a name="//apple_ref/swift/Method/didReceiveRemoteNotification(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService20GlobalMessageService28didReceiveRemoteNotificationFMS0_FGVSs10DictionaryCSo8NSObjectPSs9AnyObject__GSqVS_36GlobalMessageServicePushNotification_">didReceiveRemoteNotification(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles receiving of push-notification</p>
+
+<p>Call this func in</p>
+
+<p><code>func application(application: UIApplication, 
+didReceiveRemoteNotification userInfo: [NSObject : AnyObject])</code></p>
+
+<p>in your <code>AppDelegate</code> module</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    <p>Parameter userInfo: Recieved pushnotification payload dictionary</p>
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <p><code><a href="../Structs/GlobalMessageServicePushNotification.html">GlobalMessageServicePushNotification</a></code> if notifications allowed, user authorized, 
+notification in correct format and saved into Inbox. Otherwise returns <code>nil</code></p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">didReceiveRemoteNotification</span><span class="p">(</span>
+    <span class="nv">userInfo</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSObject</span> <span class="p">:</span> <span class="kt">AnyObject</span><span class="p">])</span>
+    <span class="o">-&gt;</span> <span class="kt">GlobalMessageServicePushNotification</span><span class="p">?</span> <span class="c1">// swiftlint:disable:this opening_brace</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Recieved pushnotification payload dictionary</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code><a href="../Structs/GlobalMessageServicePushNotification.html">GlobalMessageServicePushNotification</a></code> if notifications allowed, user authorized, notification in correct format and saved into Inbox. Otherwise returns <code>nil</code></p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC20GlobalMessageService20GlobalMessageService26googleCloudMessagingHelperXwGSqPS_46GlobalMessageServiceGoogleCloudMessagingHelper__"></a>
+                    <a name="//apple_ref/swift/Variable/googleCloudMessagingHelper" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC20GlobalMessageService20GlobalMessageService26googleCloudMessagingHelperXwGSqPS_46GlobalMessageServiceGoogleCloudMessagingHelper__">googleCloudMessagingHelper</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An instance of <code><a href="../Protocols/GlobalMessageServiceGoogleCloudMessagingHelper.html">GlobalMessageServiceGoogleCloudMessagingHelper</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">googleCloudMessagingHelper</span><span class="p">:</span> <span class="kt">GlobalMessageServiceGoogleCloudMessagingHelper</span><span class="p">?</span> <span class="o">=</span> <span class="o">.</span><span class="kt">None</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC20GlobalMessageService20GlobalMessageService6bundleCSo8NSBundle"></a>
+                    <a name="//apple_ref/swift/Variable/bundle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC20GlobalMessageService20GlobalMessageService6bundleCSo8NSBundle">bundle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>GlobalMessageService.framework</code> bundle. (read-only)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">bundle</span> <span class="o">=</span> <span class="kt">NSBundle</span><span class="p">(</span><span class="nv">forClass</span><span class="p">:</span> <span class="kt">GlobalMessageService</span><span class="o">.</span><span class="k">self</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC20GlobalMessageService20GlobalMessageService14applicationKeySS"></a>
+                    <a name="//apple_ref/swift/Variable/applicationKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC20GlobalMessageService20GlobalMessageService14applicationKeySS">applicationKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Application key. (read-only)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">applicationKey</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService20GlobalMessageService8registerFMS0_FT14applicationKeySS26googleCloudMessagingHelperPS_46GlobalMessageServiceGoogleCloudMessagingHelper_31andGoogleCloudMessagingSenderIDSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/register(applicationKey:googleCloudMessagingHelper:andGoogleCloudMessagingSenderID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService20GlobalMessageService8registerFMS0_FT14applicationKeySS26googleCloudMessagingHelperPS_46GlobalMessageServiceGoogleCloudMessagingHelper_31andGoogleCloudMessagingSenderIDSS_T_">register(applicationKey:googleCloudMessagingHelper:andGoogleCloudMessagingSenderID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Registers framework with passed application key and <code><a href="../Protocols/GlobalMessageServiceGoogleCloudMessagingHelper.html">GlobalMessageServiceGoogleCloudMessagingHelper</a></code> 
+with <code>senderID</code>
+- Parameter applicationKey: <code>String</code> with yours application key
+- Parameter googleCloudMessagingHelper: An instance of <code><a href="../Protocols/GlobalMessageServiceGoogleCloudMessagingHelper.html">GlobalMessageServiceGoogleCloudMessagingHelper</a></code>, 
+to be configured with SenderID, that provedes receiving of push-notifications on a device
+- Parameter googleCloudMessagingSenderID: Yours Google Cloud Messaging SenderID 
+(project number in Google Developer Console)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">register</span><span class="p">(</span>
+    <span class="n">applicationKey</span> <span class="nv">applicationKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">googleCloudMessagingHelper</span><span class="p">:</span> <span class="kt">GlobalMessageServiceGoogleCloudMessagingHelper</span><span class="p">,</span>
+    <span class="n">andGoogleCloudMessagingSenderID</span> <span class="nv">googleCloudMessagingSenderID</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="c1">// swiftlint:disable:this line_length</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>applicationKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>String</code> with yours application key</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>googleCloudMessagingHelper</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An instance of <code>GlobalMessageServiceGoogleCloudMessagingHelper</code>, to be configured with SenderID, that provedes receiving of push-notifications on a device</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>googleCloudMessagingSenderID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Yours Google Cloud Messaging SenderID (project number in Google Developer Console)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://gms-worldwide.com" target="_blank" rel="external">Global Message Services AG</a>. All rights reserved. (Last updated: 2016-03-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

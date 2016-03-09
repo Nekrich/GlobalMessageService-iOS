@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GlobalMessageServiceMessagesFetcher Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/GlobalMessageServiceMessagesFetcher" class="dashAnchor"></a>
+    <a title="GlobalMessageServiceMessagesFetcher Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">GlobalMessageService Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">GlobalMessageService Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        GlobalMessageServiceMessagesFetcher Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageService.html">GlobalMessageService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceCoreDataHelper.html">GlobalMessageServiceCoreDataHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceInboxViewController.html">GlobalMessageServiceInboxViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceMessageJSQ.html">GlobalMessageServiceMessageJSQ</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceMessagesFetcher.html">GlobalMessageServiceMessagesFetcher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/GlobalMessageServiceError.html">GlobalMessageServiceError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/GlobalMessageServiceMessageType.html">GlobalMessageServiceMessageType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF20GlobalMessageServiceoi2eeFTVS_27GlobalMessageServiceMessageS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CustomLocalizedDescriptionConvertible.html">CustomLocalizedDescriptionConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/GlobalMessageServiceGoogleCloudMessagingHelper.html">GlobalMessageServiceGoogleCloudMessagingHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/GlobalMessageServiceRemoteNotificationReciever.html">GlobalMessageServiceRemoteNotificationReciever</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/GlobalMessageServiceMessage.html">GlobalMessageServiceMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GlobalMessageServicePushNotification.html">GlobalMessageServicePushNotification</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>GlobalMessageServiceMessagesFetcher</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">GlobalMessageServiceMessagesFetcher</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>Class</code> fetches delivered messages from Global Message Services servers</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService35GlobalMessageServiceMessagesFetcher13fetchMessagesFMS0_FT7forDateCSo6NSDate5fetchSb17completionHandlerGSqFGO9Alamofire6ResultGSaVS_27GlobalMessageServiceMessage_OS_25GlobalMessageServiceError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/fetchMessages(forDate:fetch:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService35GlobalMessageServiceMessagesFetcher13fetchMessagesFMS0_FT7forDateCSo6NSDate5fetchSb17completionHandlerGSqFGO9Alamofire6ResultGSaVS_27GlobalMessageServiceMessage_OS_25GlobalMessageServiceError_T___T_">fetchMessages(forDate:fetch:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetches messages from Global Message Services servers
+ - Parameter date: <code>NSDate</code> concrete date for which you need to get messages
+ - Parameter fetch: <code>Bool</code> indicates to fetch message from remote server if no stored data available.
+ <code>true</code> - fetch data if there is no cached data, <code>false</code> otherwise. Default value is <code>true</code>
+ - Parameter completionHandler: The code to be executed once the request has finished. (optional). 
+This block takes no parameters. 
+Returns <code>Result</code> <code>&lt;[GlobalMessageServiceMessage], GlobalMessageServiceError&gt;</code>, where <code>result.value</code> 
+is always contains <code>Array&lt;GMSMessage&gt;</code> if there no error occurred, otherwise see <code>result.error</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">fetchMessages</span><span class="p">(</span>
+    <span class="n">forDate</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">NSDate</span><span class="p">,</span>
+    <span class="nv">fetch</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">GlobalMessageServiceMessage</span><span class="p">],</span> <span class="kt">GlobalMessageServiceError</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="o">.</span><span class="kt">None</span><span class="p">)</span> <span class="c1">// swiftlint:disable:this line_length</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>date</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>NSDate</code> concrete date for which you need to get messages</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Bool</code> indicates to fetch message from remote server if no stored data available. <code>true</code> - fetch data if there is no cached data, <code>false</code> otherwise. Default value is <code>true</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The code to be executed once the request has finished. (optional). This block takes no parameters. Returns <code>Result</code> <code>&lt;[GlobalMessageServiceMessage], GlobalMessageServiceError&gt;</code>, where <code>result.value</code> is always contains <code>Array&lt;GMSMessage&gt;</code> if there no error occurred, otherwise see <code>result.error</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC20GlobalMessageService35GlobalMessageServiceMessagesFetcher20getPushNotificationsFMS0_FT7forDateSd_GSaVS_27GlobalMessageServiceMessage_"></a>
+                    <a name="//apple_ref/swift/Method/getPushNotifications(forDate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC20GlobalMessageService35GlobalMessageServiceMessagesFetcher20getPushNotificationsFMS0_FT7forDateSd_GSaVS_27GlobalMessageServiceMessage_">getPushNotifications(forDate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets recieved push-notification from <code>GMSInboxFetchedDate</code>
+- Parameter date: <code>NSTimeInterval</code> concrete time interval 
+<em>since 00:00:00 UTC on 1 January 2001</em> for which you need to get messages
+- Returns: An array of recieved <code><a href="../Structs/GlobalMessageServiceMessage.html">GlobalMessageServiceMessage</a></code>s</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">getPushNotifications</span><span class="p">(</span><span class="n">forDate</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">NSTimeInterval</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">GlobalMessageServiceMessage</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>date</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>NSTimeInterval</code> concrete time interval  for which you need to get messages</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of recieved <code><a href="../Structs/GlobalMessageServiceMessage.html">GlobalMessageServiceMessage</a></code>s</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://gms-worldwide.com" target="_blank" rel="external">Global Message Services AG</a>. All rights reserved. (Last updated: 2016-03-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

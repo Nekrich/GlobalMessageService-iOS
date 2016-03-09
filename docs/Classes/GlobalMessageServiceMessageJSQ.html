@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GlobalMessageServiceMessageJSQ Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/GlobalMessageServiceMessageJSQ" class="dashAnchor"></a>
+    <a title="GlobalMessageServiceMessageJSQ Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">GlobalMessageService Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">GlobalMessageService Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        GlobalMessageServiceMessageJSQ Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageService.html">GlobalMessageService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceCoreDataHelper.html">GlobalMessageServiceCoreDataHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceInboxViewController.html">GlobalMessageServiceInboxViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceMessageJSQ.html">GlobalMessageServiceMessageJSQ</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceMessagesFetcher.html">GlobalMessageServiceMessagesFetcher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/GlobalMessageServiceError.html">GlobalMessageServiceError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/GlobalMessageServiceMessageType.html">GlobalMessageServiceMessageType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF20GlobalMessageServiceoi2eeFTVS_27GlobalMessageServiceMessageS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CustomLocalizedDescriptionConvertible.html">CustomLocalizedDescriptionConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/GlobalMessageServiceGoogleCloudMessagingHelper.html">GlobalMessageServiceGoogleCloudMessagingHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/GlobalMessageServiceRemoteNotificationReciever.html">GlobalMessageServiceRemoteNotificationReciever</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/GlobalMessageServiceMessage.html">GlobalMessageServiceMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GlobalMessageServicePushNotification.html">GlobalMessageServicePushNotification</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>GlobalMessageServiceMessageJSQ</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">GlobalMessageServiceMessageJSQ</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">JSQMessageData</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>JSQMessageData</code> wrapper for <code><a href="../Structs/GlobalMessageServiceMessage.html">GlobalMessageServiceMessage</a></code></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ8senderIdFS0_FT_GSQSS_"></a>
+                    <a name="//apple_ref/swift/Method/senderId()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ8senderIdFS0_FT_GSQSS_">senderId()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    A string identifier that uniquely identifies the user who sent the message.
+*
+
+</div>
+
+<p><li>@discussion If you need to generate a unique identifier, consider using</li>
+<li><code>[[NSProcessInfo processInfo] globallyUniqueString]</code>
+*</li>
+<li>@warning You must not return <code>nil</code> from this method. This value must be unique.</li></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">senderId</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A string identifier that uniquely identifies the user who sent the message.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ17senderDisplayNameFS0_FT_GSQSS_"></a>
+                    <a name="//apple_ref/swift/Method/senderDisplayName()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ17senderDisplayNameFS0_FT_GSQSS_">senderDisplayName()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    The display name for the user who sent the message.
+*
+
+</div>
+
+<p><li>@warning You must not return <code>nil</code> from this method.</li></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">senderDisplayName</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The display name for the user who sent the message.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ4dateFS0_FT_GSQCSo6NSDate_"></a>
+                    <a name="//apple_ref/swift/Method/date()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ4dateFS0_FT_GSQCSo6NSDate_">date()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The date that the message was delivered
+- Returns: The date that the message was sent.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">date</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSDate</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The date that the message was sent.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ14isMediaMessageFS0_FT_Sb"></a>
+                    <a name="//apple_ref/swift/Method/isMediaMessage()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ14isMediaMessageFS0_FT_Sb">isMediaMessage()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method is used to determine if the message data item contains text or media.
+If this method returns <code>YES</code>, an instance of <code>JSQMessagesViewController</code> will ignore
+the <code>text</code> method of this protocol when dequeuing a <code>JSQMessagesCollectionViewCell</code>
+and only call the <code>media</code> method.</p>
+
+<p>Similarly, if this method returns <code>NO</code> then the <code>media</code> method will be ignored and
+and only the <code>text</code> method will be called.</p>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    A boolean value specifying whether or not this is a media message or a text message.
+Return <code>YES</code> if this item is a media message, and <code>NO</code> if it is a text message.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isMediaMessage</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A boolean value specifying whether or not this is a media message or a text message. Return <code>YES</code> if this item is a media message, and <code>NO</code> if it is a text message.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ11messageHashFS0_FT_Su"></a>
+                    <a name="//apple_ref/swift/Method/messageHash()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ11messageHashFS0_FT_Su">messageHash()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An integer that can be used as a table address in a hash table structure.
+- Returns: An integer that can be used as a table address in a hash table structure.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This value must be unique for each message with distinct contents.
+This value is used to cache layout information in the collection view.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">messageHash</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UInt</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An integer that can be used as a table address in a hash table structure.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ4textFS0_FT_GSQSS_"></a>
+                    <a name="//apple_ref/swift/Method/text()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20GlobalMessageService30GlobalMessageServiceMessageJSQ4textFS0_FT_GSQSS_">text()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>String</code> representing message body. Can be <code>nil</code>
+- Returns: <code>String</code> representing message body. Can be <code>nil</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">text</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>String</code> representing message body. Can be <code>nil</code></p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC20GlobalMessageService30GlobalMessageServiceMessageJSQ4typeOS_31GlobalMessageServiceMessageType"></a>
+                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC20GlobalMessageService30GlobalMessageServiceMessageJSQ4typeOS_31GlobalMessageServiceMessageType">type</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Message type
+- Returns: Message type
+- SeeAlso: <code><a href="../Enums/GlobalMessageServiceMessageType.html">GlobalMessageServiceMessageType</a></code> for details</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">GlobalMessageServiceMessageType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Message type</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://gms-worldwide.com" target="_blank" rel="external">Global Message Services AG</a>. All rights reserved. (Last updated: 2016-03-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

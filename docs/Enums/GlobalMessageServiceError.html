@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GlobalMessageServiceError Enum Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/GlobalMessageServiceError" class="dashAnchor"></a>
+    <a title="GlobalMessageServiceError Enum Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">GlobalMessageService Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">GlobalMessageService Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        GlobalMessageServiceError Enum Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageService.html">GlobalMessageService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceCoreDataHelper.html">GlobalMessageServiceCoreDataHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceInboxViewController.html">GlobalMessageServiceInboxViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceMessageJSQ.html">GlobalMessageServiceMessageJSQ</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GlobalMessageServiceMessagesFetcher.html">GlobalMessageServiceMessagesFetcher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/GlobalMessageServiceError.html">GlobalMessageServiceError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/GlobalMessageServiceMessageType.html">GlobalMessageServiceMessageType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF20GlobalMessageServiceoi2eeFTVS_27GlobalMessageServiceMessageS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CustomLocalizedDescriptionConvertible.html">CustomLocalizedDescriptionConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/GlobalMessageServiceGoogleCloudMessagingHelper.html">GlobalMessageServiceGoogleCloudMessagingHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/GlobalMessageServiceRemoteNotificationReciever.html">GlobalMessageServiceRemoteNotificationReciever</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/GlobalMessageServiceMessage.html">GlobalMessageServiceMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/GlobalMessageServicePushNotification.html">GlobalMessageServicePushNotification</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>GlobalMessageServiceError</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">GlobalMessageServiceError</span><span class="p">:</span> <span class="kt">ErrorType</span></code></pre>
+
+                </div>
+              </div>
+            <p>Enum represents GlobalMessageService framework errors</p>
+
+<ul>
+<li>RequestError: A HTTP request error. Contains <code><a href="../Enums/GlobalMessageServiceError/Request.html">GlobalMessageServiceError.Request</a></code></li>
+<li>ResultParsingError: An error occured when parsing result. Contains 
+<code><a href="../Enums/GlobalMessageServiceError/ResultParsing.html">GlobalMessageServiceError.ResultParsing</a></code></li>
+<li>AddSubscriberError: An error occured when adding new subscriber. 
+Contains <code><a href="../Enums/GlobalMessageServiceError/AddSubscriber.html">GlobalMessageServiceError.AddSubscriber</a></code></li>
+<li>AnotherTaskInProgressError: Another task in progress error. 
+Contains <code><a href="../Enums/GlobalMessageServiceError/AnotherTaskInProgress.html">GlobalMessageServiceError.AnotherTaskInProgress</a></code></li>
+<li>MessageFetcherError: Error occurred when retrieving messages. Contains 
+<code><a href="../Enums/GlobalMessageServiceError/MessageFetcher.html">GlobalMessageServiceError.MessageFetcher</a></code></li>
+<li>GMSTokenIsNotSet: Global Message Service token is not set</li>
+<li>GCMTokenIsNotSet: Google Cloud Messaging token is not set</li>
+<li>UnknownError: An unknown error occurred</li>
+</ul>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO20GlobalMessageService25GlobalMessageServiceError12RequestErrorFMS0_FOS0_7RequestS0_"></a>
+                    <a name="//apple_ref/swift/Element/RequestError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO20GlobalMessageService25GlobalMessageServiceError12RequestErrorFMS0_FOS0_7RequestS0_">RequestError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A HTTP request error. Contains <code><a href="../Enums/GlobalMessageServiceError/Request.html">GlobalMessageServiceError.Request</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">RequestError</span><span class="p">(</span><span class="kt">Request</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO20GlobalMessageService25GlobalMessageServiceError18ResultParsingErrorFMS0_FOS0_13ResultParsingS0_"></a>
+                    <a name="//apple_ref/swift/Element/ResultParsingError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO20GlobalMessageService25GlobalMessageServiceError18ResultParsingErrorFMS0_FOS0_13ResultParsingS0_">ResultParsingError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An error occured when parsing result. Contains <code><a href="../Enums/GlobalMessageServiceError/ResultParsing.html">GlobalMessageServiceError.ResultParsing</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">ResultParsingError</span><span class="p">(</span><span class="kt">ResultParsing</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO20GlobalMessageService25GlobalMessageServiceError18AddSubscriberErrorFMS0_FOS0_13AddSubscriberS0_"></a>
+                    <a name="//apple_ref/swift/Element/AddSubscriberError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO20GlobalMessageService25GlobalMessageServiceError18AddSubscriberErrorFMS0_FOS0_13AddSubscriberS0_">AddSubscriberError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An error occured when adding new subscriber. Contains <code><a href="../Enums/GlobalMessageServiceError/AddSubscriber.html">GlobalMessageServiceError.AddSubscriber</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">AddSubscriberError</span><span class="p">(</span><span class="kt">AddSubscriber</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO20GlobalMessageService25GlobalMessageServiceError26AnotherTaskInProgressErrorFMS0_FOS0_21AnotherTaskInProgressS0_"></a>
+                    <a name="//apple_ref/swift/Element/AnotherTaskInProgressError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO20GlobalMessageService25GlobalMessageServiceError26AnotherTaskInProgressErrorFMS0_FOS0_21AnotherTaskInProgressS0_">AnotherTaskInProgressError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Another task in progress error. Contains <code><a href="../Enums/GlobalMessageServiceError/AnotherTaskInProgress.html">GlobalMessageServiceError.AnotherTaskInProgress</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">AnotherTaskInProgressError</span><span class="p">(</span><span class="kt">AnotherTaskInProgress</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO20GlobalMessageService25GlobalMessageServiceError19MessageFetcherErrorFMS0_FOS0_14MessageFetcherS0_"></a>
+                    <a name="//apple_ref/swift/Element/MessageFetcherError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO20GlobalMessageService25GlobalMessageServiceError19MessageFetcherErrorFMS0_FOS0_14MessageFetcherS0_">MessageFetcherError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Error occurred when retrieving messages. Contains <code><a href="../Enums/GlobalMessageServiceError/MessageFetcher.html">GlobalMessageServiceError.MessageFetcher</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">MessageFetcherError</span><span class="p">(</span><span class="kt">MessageFetcher</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO20GlobalMessageService25GlobalMessageServiceError16GMSTokenIsNotSetFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/GMSTokenIsNotSet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO20GlobalMessageService25GlobalMessageServiceError16GMSTokenIsNotSetFMS0_S0_">GMSTokenIsNotSet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Global Message Service token is not set</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">GMSTokenIsNotSet</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO20GlobalMessageService25GlobalMessageServiceError16GCMTokenIsNotSetFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/GCMTokenIsNotSet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO20GlobalMessageService25GlobalMessageServiceError16GCMTokenIsNotSetFMS0_S0_">GCMTokenIsNotSet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Google Cloud Messaging token is not set</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">GCMTokenIsNotSet</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO20GlobalMessageService25GlobalMessageServiceError13NotAuthorizedFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/NotAuthorized" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO20GlobalMessageService25GlobalMessageServiceError13NotAuthorizedFMS0_S0_">NotAuthorized</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An unknown error occurred</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">NotAuthorized</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO20GlobalMessageService25GlobalMessageServiceError12UnknownErrorFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/UnknownError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO20GlobalMessageService25GlobalMessageServiceError12UnknownErrorFMS0_S0_">UnknownError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An unknown error occurred</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">UnknownError</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vO20GlobalMessageService25GlobalMessageServiceError20localizedDescriptionSS"></a>
+                    <a name="//apple_ref/swift/Property/localizedDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vO20GlobalMessageService25GlobalMessageServiceError20localizedDescriptionSS">localizedDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A string containing the localized description of the object. (read-only)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">localizedDescription</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:OO20GlobalMessageService25GlobalMessageServiceError21AnotherTaskInProgress"></a>
+                    <a name="//apple_ref/swift/Enum/AnotherTaskInProgress" class="dashAnchor"></a>
+                    <a class="token" href="#/s:OO20GlobalMessageService25GlobalMessageServiceError21AnotherTaskInProgress">AnotherTaskInProgress</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enum represents errors occured when you trying launch</p>
+
+<ul>
+<li>AddSubscriber: Adding new subscriber</li>
+<li>UpdateSubscriber: Updating subscriber&rsquo;s info</li>
+<li>UpdateGCMToken: Updating Google Cloud Messaging token</li>
+</ul>
+
+                        <a href="../Enums/GlobalMessageServiceError/AnotherTaskInProgress.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnotherTaskInProgress</span><span class="p">:</span> <span class="kt">ErrorType</span><span class="p">,</span> <span class="kt">CustomLocalizedDescriptionConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:OO20GlobalMessageService25GlobalMessageServiceError13AddSubscriber"></a>
+                    <a name="//apple_ref/swift/Enum/AddSubscriber" class="dashAnchor"></a>
+                    <a class="token" href="#/s:OO20GlobalMessageService25GlobalMessageServiceError13AddSubscriber">AddSubscriber</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enum represents response errors occured when adding new subscriber</p>
+
+<ul>
+<li>NoAppDeviceId: There is no expexted <code>uniqAppDeviceId</code> field in response data</li>
+<li>AppDeviceIdWrondType: Can&rsquo;t convert recieved <code>uniqAppDeviceId</code> to <code>UInt64</code></li>
+<li>AppDeviceIdLessOrEqualZero: Recieved <code>uniqAppDeviceId</code> is <code>0</code> or less</li>
+</ul>
+
+                        <a href="../Enums/GlobalMessageServiceError/AddSubscriber.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AddSubscriber</span><span class="p">:</span> <span class="kt">ErrorType</span><span class="p">,</span> <span class="kt">CustomLocalizedDescriptionConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:OO20GlobalMessageService25GlobalMessageServiceError13ResultParsing"></a>
+                    <a name="//apple_ref/swift/Enum/ResultParsing" class="dashAnchor"></a>
+                    <a class="token" href="#/s:OO20GlobalMessageService25GlobalMessageServiceError13ResultParsing">ResultParsing</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enum represents response parsing errors</p>
+
+<ul>
+<li>CantRepresentResultAsDictionary: Request returned response <code>NSData</code>, 
+that can&rsquo;t be represented as <code>[String: AnyObject]</code></li>
+<li>NoStatus: There is no expexted <code>status</code> flag in response data</li>
+<li>StatusIsFalse: <code>status</code> flag in response data is <code>false</code>. 
+Contains <code>String?</code> - description of error, that occurred on a remote server</li>
+<li>UnknownError: Unknown error occurred when parsing response</li>
+</ul>
+
+                        <a href="../Enums/GlobalMessageServiceError/ResultParsing.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ResultParsing</span><span class="p">:</span> <span class="kt">ErrorType</span><span class="p">,</span> <span class="kt">CustomLocalizedDescriptionConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:OO20GlobalMessageService25GlobalMessageServiceError7Request"></a>
+                    <a name="//apple_ref/swift/Enum/Request" class="dashAnchor"></a>
+                    <a class="token" href="#/s:OO20GlobalMessageService25GlobalMessageServiceError7Request">Request</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enum represents request errors</p>
+
+<ul>
+<li>Error: Request failed. Contains a pointer to <code>NSError</code> object.</li>
+<li>UnknownError: Request failed but there is no any represenative error</li>
+</ul>
+
+                        <a href="../Enums/GlobalMessageServiceError/Request.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Request</span><span class="p">:</span> <span class="kt">ErrorType</span><span class="p">,</span> <span class="kt">CustomLocalizedDescriptionConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:OO20GlobalMessageService25GlobalMessageServiceError14MessageFetcher"></a>
+                    <a name="//apple_ref/swift/Enum/MessageFetcher" class="dashAnchor"></a>
+                    <a class="token" href="#/s:OO20GlobalMessageService25GlobalMessageServiceError14MessageFetcher">MessageFetcher</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enum represents errors occurred when retrieving messages</p>
+
+<ul>
+<li>NoPhone: Subscribers profile has no phone number</li>
+<li>CoreDataSaveError(NSError): An error occurred while saving new messages. 
+Contains a pointer to <code>NSError</code> object.</li>
+</ul>
+
+                        <a href="../Enums/GlobalMessageServiceError/MessageFetcher.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MessageFetcher</span><span class="p">:</span> <span class="kt">ErrorType</span><span class="p">,</span> <span class="kt">CustomLocalizedDescriptionConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://gms-worldwide.com" target="_blank" rel="external">Global Message Services AG</a>. All rights reserved. (Last updated: 2016-03-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
