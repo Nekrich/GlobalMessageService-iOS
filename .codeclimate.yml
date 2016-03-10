@@ -1,0 +1,18 @@
+---
+engines:
+  csslint:
+    enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - swift
+      - objective-c
+  eslint:
+    enabled: false
+  fixme:
+    enabled: true
+exclude_paths:
+ - docs/**/*
+ - GlobalMessageService/Build/**/*
+ - GlobalMessageService/Pods/**/*
