@@ -13,6 +13,9 @@ Pods/
 ##Private docs
 docs/privateDocs/
 
+##Cache
+.cache/
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
