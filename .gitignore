@@ -9,7 +9,6 @@ DerivedData
 
 ##Pods
 Pods/
-GlobalMessageService/Podfile.lock
 
 ##Private docs
 docs/privateDocs/
