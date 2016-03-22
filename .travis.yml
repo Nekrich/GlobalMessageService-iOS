@@ -23,6 +23,8 @@ env:
     - DESTINATION="OS=9.3,name=iPhone 6S Plus" SCHEME="$IOS_FRAMEWORK_SCHEME" SDK="$IOS_SDK" POD_LINT="NO" RUN_TESTS="YES"
 before_install:
   - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+  - which pod
+  - pod --version
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
