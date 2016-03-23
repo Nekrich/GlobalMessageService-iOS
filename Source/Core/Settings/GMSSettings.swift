@@ -148,10 +148,12 @@ internal class GlobalMessageServiceSettings: NSObject {
     
     let gmsTokenNumber = NSNumber(unsignedLongLong: gmsToken)
     
+    // swiftlint:disable comma
     aCoder.encodeObject(gcmToken,       forKey: "gcmToken")
     aCoder.encodeObject(apnsToken,      forKey: "apnsToken")
     aCoder.encodeObject(gmsTokenNumber, forKey: "gmsToken")
     aCoder.encodeBool  (authorized,     forKey: "authorized")
+    // swiftlint:enable comma
     
   }
  

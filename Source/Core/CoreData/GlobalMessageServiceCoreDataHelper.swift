@@ -28,13 +28,13 @@ public final class GlobalMessageServiceCoreDataHelper {
     self.fileName = fileName
     NSNotificationCenter.defaultCenter().addObserver(
       self,
-      selector: "save",
+      selector: #selector(save),
       name: UIApplicationDidEnterBackgroundNotification,
       object: nil)
     
     NSNotificationCenter.defaultCenter().addObserver(
       self,
-      selector: "save",
+      selector: #selector(save),
       name: UIApplicationWillTerminateNotification,
       object: nil)
   }

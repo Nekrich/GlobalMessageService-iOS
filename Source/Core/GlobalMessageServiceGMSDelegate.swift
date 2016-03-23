@@ -145,13 +145,13 @@ public extension GlobalMessageServiceGoogleCloudMessagingHelper {
   public func addApplicationDidObservers() {
     NSNotificationCenter.defaultCenter().addObserver(
       self,
-      selector: "didEnterBackground",
+      selector: NSSelectorFromString("didEnterBackground"),
       name: UIApplicationDidEnterBackgroundNotification,
       object: nil)
     
     NSNotificationCenter.defaultCenter().addObserver(
       self,
-      selector: "didBecomeActive",
+      selector: NSSelectorFromString("didBecomeActive"),
       name: UIApplicationDidBecomeActiveNotification,
       object: nil)
   }

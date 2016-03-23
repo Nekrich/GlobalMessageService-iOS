@@ -20,7 +20,7 @@ pre_install do |installer|
   def installer.verify_no_static_framework_transitive_dependencies; end
 end
 
-pod 'GlobalMessageService', :git => 'https://github.com/GlobalMessageServicesAG/GlobalMessageService-iOS.git', :tag => '0.0.1'
+pod 'GlobalMessageService', :git => 'https://github.com/GlobalMessageServicesAG/GlobalMessageService-iOS.git', :tag => '0.0.2'
 ```
 
 Then, run the following command:
