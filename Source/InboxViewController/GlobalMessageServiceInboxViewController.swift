@@ -80,7 +80,7 @@ public class GlobalMessageServiceInboxViewController: JSQMessagesViewController 
     
     collectionView?.collectionViewLayout.messageBubbleLeftRightMargin = 58.0
     
-    JSQMessagesCollectionViewCell.registerMenuAction("delete:")
+    JSQMessagesCollectionViewCell.registerMenuAction(#selector(NSObject.delete(_:)))
     
     self.showLoadEarlierMessagesHeader = self.fetcher.hasMorePrevious
     
@@ -117,7 +117,7 @@ public class GlobalMessageServiceInboxViewController: JSQMessagesViewController 
     todaysMesagesUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(
       _todaysMesagesUpdateInterval,
       target: self,
-      selector: "fetchTodaysMesagesTimerFired:",
+      selector: #selector(fetchTodaysMesagesTimerFired(_:)),
       userInfo: .None,
       repeats: false)
   }
