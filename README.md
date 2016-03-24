@@ -1,3 +1,5 @@
+[![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://swift.org/)
+[![Platforms iOS](https://img.shields.io/badge/Platforms-iOS-lightgray.svg?style=flat)](https://swift.org/)
 [![Build Status](https://travis-ci.org/GlobalMessageServicesAG/GlobalMessageService-iOS.svg?branch=master)](https://travis-ci.org/GlobalMessageServicesAG/GlobalMessageService-iOS)
 
 ### Installation
@@ -20,7 +22,7 @@ pre_install do |installer|
   def installer.verify_no_static_framework_transitive_dependencies; end
 end
 
-pod 'GlobalMessageService', :git => 'https://github.com/GlobalMessageServicesAG/GlobalMessageService-iOS.git', :tag => '0.0.2'
+pod 'GlobalMessageService', :git => 'https://github.com/GlobalMessageServicesAG/GlobalMessageService-iOS.git', :tag => '0.0.3'
 ```
 
 Then, run the following command:
@@ -33,7 +35,7 @@ $ pod install
 Add [```GMSGoogleCloudMessagingDelegate.swift```](https://github.com/GlobalMessageServicesAG/GlobalMessageService-iOS/tree/master/targetFiles/GMSGoogleCloudMessagingDelegate.swift) file to your project
 
 #### Configure target
-Disable bitcode (set `ENABLE_BITCODE` to `false`) in build settings for your target
+Disable bitcode (set `ENABLE_BITCODE` to `false`) in build settings for your target. See Google Cloud Messaging [issue](https://github.com/google/gcm/issues/91)
 
 #### Modify AppDelegate
 ##### Add ```import``` statement
@@ -144,8 +146,11 @@ Contact [Global Message Services](http://www.gms-worldwide.com/en/kontakty.html)
 Google Cloud Messaging Sender ID is your Project number that you can get in [Google Developer Console](https://console.developers.google.com/)
 
 ### License
-MIT
+[MIT][LICENSE]
+
 #### 3rdparties
 [Alamofire](https://github.com/Alamofire/Alamofire) by [Alamofire Software Foundation](http://alamofire.org/). [MIT license](https://github.com/Alamofire/Alamofire/blob/master/LICENSE)
 
 [XCGLogger](https://github.com/DaveWoodCom/XCGLogger) by [Dave Wood](https://twitter.com/DaveWoodX). [MIT license](https://github.com/DaveWoodCom/XCGLogger/blob/master/LICENSE.txt)
+
+[Google Cloud Messaging](https://github.com/google/gcm/blob/master/LICENSE)
