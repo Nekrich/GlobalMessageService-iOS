@@ -147,6 +147,7 @@ Google Cloud Messaging Sender ID is your Project number that you can get in [Goo
 
 ### License
 [MIT][LICENSE]
+[LICENSE]: LICENSE
 
 #### 3rdparties
 [Alamofire](https://github.com/Alamofire/Alamofire) by [Alamofire Software Foundation](http://alamofire.org/). [MIT license](https://github.com/Alamofire/Alamofire/blob/master/LICENSE)
