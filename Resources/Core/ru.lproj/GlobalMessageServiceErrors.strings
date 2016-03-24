@@ -30,25 +30,25 @@
 "GlobalMessageServiceProviderResultParsingError.StatusIsFalse" = "Failed. %@";
 "GlobalMessageServiceProviderResultParsingError.UnknownError" = "Result parser error";
 */
-"MessageFetcher.NoPhone" = "Subscriber has no phone number";
-"MessageFetcher.CoreDataSaveError" = "%@. Can't save messages";
+"MessageFetcher.NoPhone" = "У абонента не указан телефонный номер";
+"MessageFetcher.CoreDataSaveError" = "Ошибка при сохранении сообщения: %@";
 
-"Request.Error" = "HTTP request error: %@";
-"Request.UnknownError" = "HTTP request unknown error";
+"Request.Error" = "Ошибка HTTP запроса: %@";
+"Request.UnknownError" = "Неизвестная ошибка HTTP запроса";
 
-"ResultParsing.CantRepresentResultAsDictionary" = "Wrong result format";
-"ResultParsing.NoStatus" = "No operation status flag";
-"ResultParsing.StatusIsFalse" = "Failed. %@";
-"ResultParsing.UnknownError" = "Result parser error";
+"ResultParsing.CantRepresentResultAsDictionary" = "Неверный формат ответа сервера";
+"ResultParsing.NoStatus" = "Отсутствует флаг статуса выполненной операции";
+"ResultParsing.StatusIsFalse" = "Ошибка. %@";
+"ResultParsing.UnknownError" = "Ошибка разбора ответа от сервера";
 
-"AddSubscriber.NoAppDeviceId" = "No requested Global Message Service token";
-"AddSubscriber.AppDeviceIdWrondType" = "Wrong Global Message Service token type";
-"AddSubscriber.AppDeviceIdLessOrEqualZero" = "Global Message Service token less or equal zero";
+"AddSubscriber.NoAppDeviceId" = "Отсутствует ожидаемый токен Global Message Service";
+"AddSubscriber.AppDeviceIdWrondType" = "Не верный тип токена Global Message Service";
+"AddSubscriber.AppDeviceIdLessOrEqualZero" = "Токен Global Message Service меньше или равен нулю";
 
-"AnotherTaskInProgress.AddSubscriber" = "Another task in progress: add subscriber";
-"AnotherTaskInProgress.UpdateSubscriber" = "Another task in progress: ubdate subscriber info";
-"AnotherTaskInProgress.UpdateGCMToken" = "Another task in progress: ubdate Global Message Service token";
+"AnotherTaskInProgress.AddSubscriber" = "Выполняется другой запрос: реєстрація абонента";
+"AnotherTaskInProgress.UpdateSubscriber" = "Выполняется другой запрос: обновление информации абонента";
+"AnotherTaskInProgress.UpdateGCMToken" = "Выполняется другой запрос: получение токена Global Message Service";
 
-"GlobalMessageServiceError.GMSTokenIsNotSet" = "Global Message Service token is not set";
-"GlobalMessageServiceError.GCMTokenIsNotSet" = "No Google Cloud Messaging token";
-"GlobalMessageServiceError.UnknownError" = "Unknown error";
+"GlobalMessageServiceError.GMSTokenIsNotSet" = "Не установлено значение токена Global Message Service";
+"GlobalMessageServiceError.GCMTokenIsNotSet" = "Отсутствует токен Google Cloud Messaging";
+"GlobalMessageServiceError.UnknownError" = "Неизвестная ошибк";

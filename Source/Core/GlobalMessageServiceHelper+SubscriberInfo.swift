@@ -82,15 +82,18 @@ private extension GlobalMessageServiceHelper {
           GlobalMessageServiceCoreDataHelper.managedObjectContext.deleteObjectctsOfAllEntities()
         }
         
-        if response.isFailure(completion) {
+        guard let _: [String: AnyObject] = response.result.value else {
+          self.updateSubscriberInfoTask = .None
+          completion?(.Failure(response.result.error ?? .UnknownError))
           return
         }
         
         GlobalMessageService.registeredUser = GlobalMessageServicesSubscriber(withEmail: email, phone: phone)
         
+        self.updateSubscriberInfoTask = .None
+
         completion?(.Success(true))
         
-        self.updateSubscriberInfoTask = .None
     }
   }
   
@@ -143,7 +146,9 @@ private extension GlobalMessageServiceHelper {
           completion?(.Failure(.AddSubscriberError(error)))
         }
         
-        guard let json: [String: AnyObject] = response.value(.UnknownError, completion) else {
+        guard let json: [String: AnyObject] = response.result.value else {
+          self.addSubscriberTask = .None
+          completion?(.Failure(response.result.error ?? .UnknownError))
           return
         }
         
