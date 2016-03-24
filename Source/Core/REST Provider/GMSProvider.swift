@@ -77,6 +77,5 @@ internal extension GMSProvider {
   /// `NSURL` to OTTBulk Plaform (delivery reports, message fetching) REST API
   static let ottBulkPlatformURL = NSURL(
 //    string: "http://10.12.8.1:8080/OTTBulkPlatform/ott/sdk_api/")!
-//    string: "https://ott-test.gms-worldwide.com/OTTBulkPlatform/ott/sdk_api/")!
-    string: "https://mobile-test.gms-worldwide.com/OTTBulkPlatform/ott/sdk_api/")!
+    string: "https://mobile-test.gms-worldwide.com/OTTBulkDr/ott/sdk_api/")!
 }
