@@ -46,9 +46,10 @@
 "AddSubscriber.AppDeviceIdLessOrEqualZero" = "Global Message Service token less or equal zero";
 
 "AnotherTaskInProgress.AddSubscriber" = "Another task in progress: add subscriber";
-"AnotherTaskInProgress.UpdateSubscriber" = "Another task in progress: ubdate subscriber info";
-"AnotherTaskInProgress.UpdateGCMToken" = "Another task in progress: ubdate Global Message Service token";
+"AnotherTaskInProgress.UpdateSubscriber" = "Another task in progress: update subscriber info";
+"AnotherTaskInProgress.UpdateGCMToken" = "Another task in progress: update Global Message Service token";
 
 "GlobalMessageServiceError.GMSTokenIsNotSet" = "Global Message Service token is not set";
 "GlobalMessageServiceError.GCMTokenIsNotSet" = "No Google Cloud Messaging token";
+"GlobalMessageServiceError.NoPhoneOrEmailPassed" = "No phone or e-mail passed";
 "GlobalMessageServiceError.UnknownError" = "Unknown error";

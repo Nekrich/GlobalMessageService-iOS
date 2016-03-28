@@ -29,6 +29,7 @@ Contains `GlobalMessageServiceError.AnotherTaskInProgress`
 `GlobalMessageServiceError.MessageFetcher`
  - GMSTokenIsNotSet: Global Message Service token is not set
  - GCMTokenIsNotSet: Google Cloud Messaging token is not set
+ - NoPhoneOrEmailPassed: No phone or e-mail is passed
  - UnknownError: An unknown error occurred
  */
 public enum GlobalMessageServiceError: ErrorType {
@@ -56,6 +57,9 @@ public enum GlobalMessageServiceError: ErrorType {
   
   /// An unknown error occurred
   case NotAuthorized
+  
+  /// No phone or e-mail is passed
+  case NoPhoneOrEmailPassed
   
   /// An unknown error occurred
   case UnknownError
@@ -205,6 +209,7 @@ public extension GlobalMessageServiceError {
   }
   
 }
+
 // MARK: - GlobalMessageServiceError.ResultParsing
 public extension GlobalMessageServiceError {
   

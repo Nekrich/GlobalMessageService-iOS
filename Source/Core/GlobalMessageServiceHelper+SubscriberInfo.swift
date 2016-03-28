@@ -52,7 +52,7 @@ private extension GlobalMessageServiceHelper {
    where `result.value` is always `true` if there no error occurred, otherwise see `result.error`
    */
   private func updateSubscriberInfo(
-    email email: String,
+    email email: String?,
     phone: Int64?,
     completionHandler completion: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
@@ -66,6 +66,12 @@ private extension GlobalMessageServiceHelper {
       phoneNSNumber = NSNumber(longLong: phone)
     } else {
       phoneNSNumber = .None
+    }
+    
+    let email = email ?? ""
+    
+    if !validateEmail(email, phone: phone, completionHandler: completion) {
+      return
     }
     
     let requestParameters: [String: AnyObject] = [
@@ -108,7 +114,7 @@ private extension GlobalMessageServiceHelper {
    otherwise see `result.error`
    */
   private func addSubscriber(
-    email email: String,
+    email email: String?,
     phone: Int64?,
     completionHandler completion: ((Result<UInt64, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
@@ -121,16 +127,22 @@ private extension GlobalMessageServiceHelper {
     
     let device = UIDevice.currentDevice()
     
-    let phoneNSNUmber: NSNumber?
+    let phoneNSNumber: NSNumber?
     if let phone = phone {
-      phoneNSNUmber = NSNumber(longLong: phone)
+      phoneNSNumber = NSNumber(longLong: phone)
     } else {
-      phoneNSNUmber = .None
+      phoneNSNumber = .None
+    }
+    
+    let email = email ?? ""
+    
+    if !validateEmail(email, phone: phone, completionHandler: completion) {
+      return
     }
     
     let requestParameters: [String: AnyObject] = [
       "uniqAppDeviceId": NSNull(),
-      "phone": phoneNSNUmber ?? NSNull(),
+      "phone": phoneNSNumber ?? NSNull(),
       "email": email.isEmpty ? NSNull() : email,
       "gcmTokenId":  gcmToken.isEmpty ? NSNull() : gcmToken,
       "device_type": device.systemName,
@@ -141,11 +153,6 @@ private extension GlobalMessageServiceHelper {
       "lib_add_abonent",
       parameters: requestParameters) { response in
         
-        let errorCompletion: (GlobalMessageServiceError.AddSubscriber) -> Void = { error in
-          self.addSubscriberTask = .None
-          completion?(.Failure(.AddSubscriberError(error)))
-        }
-        
         guard let json: [String: AnyObject] = response.result.value else {
           self.addSubscriberTask = .None
           completion?(.Failure(response.result.error ?? .UnknownError))
@@ -153,17 +160,17 @@ private extension GlobalMessageServiceHelper {
         }
         
         guard let uniqAppDeviceId = json["uniqAppDeviceId"] else {
-          errorCompletion(.NoAppDeviceId)
+          completion?(.Failure(.AddSubscriberError(.NoAppDeviceId)))
           return
         }
         
         guard let newGMSDeviceID = uniqAppDeviceId as? Double else {
-          errorCompletion(.AppDeviceIdWrondType)
+          completion?(.Failure(.AddSubscriberError(.AppDeviceIdWrondType)))
           return
         }
         
         if newGMSDeviceID <= 0 {
-          errorCompletion(.AppDeviceIdLessOrEqualZero)
+          completion?(.Failure(.AddSubscriberError(.AppDeviceIdLessOrEqualZero)))
           return
         }
         
@@ -233,44 +240,7 @@ internal extension GlobalMessageServiceHelper {
   {
     return canPreformAction(false, completion)
   }
-  
-  /**
-   Checks if there no mutually exclusive tasks
-   
-   - parameter checkGMStoken: `Bool` indicates to check Global Message Services device token is set, or not
-   - parameter completion: closure to execute, if checks not passed
-   - returns: `true` if all checks passed, `false` otherwise
-   */
-  internal func canPreformAction<T>(
-    checkGMStoken: Bool,
-    _ completion: ((Result<T, GlobalMessageServiceError>) -> Void)? = .None)
-    -> Bool // swiftlint:disable:this opening_brace
-  {
-    
-    let errorCompletion: (GlobalMessageServiceError.AnotherTaskInProgress) -> Void = { error in
-      completion?(.Failure(.AnotherTaskInProgressError(error)))
-      return
-    }
-    
-    if addSubscriberTask != nil {
-      errorCompletion(.AddSubscriber)
-      return false
-    }
-    
-    if updateSubscriberInfoTask != nil {
-      errorCompletion(.UpdateSubscriber)
-      return false
-    }
-    
-    if checkGMStoken && GlobalMessageService.registeredGMStoken <= 0 {
-      completion?(.Failure(.GMSTokenIsNotSet))
-      return false
-    }
-    
-    return true
-    
-  }
-	
+  	
 }
 
 // MARK: - Allow receive remote push-notifications
@@ -357,7 +327,7 @@ public extension GlobalMessageService {
    otherwise see `result.error`
    */
   public static func addSubscriber(
-    email email: String,
+    email email: String?,
     phone: Int64?,
     completionHandler completion: ((Result<UInt64, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
@@ -379,7 +349,7 @@ public extension GlobalMessageService {
    where `result.value` is always `true` if there no error occurred, otherwise see `result.error`
    */
   public static func updateSubscriberInfo(
-    email email: String,
+    email email: String?,
     phone: Int64?,
     completionHandler completion: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
   {

@@ -51,4 +51,5 @@
 
 "GlobalMessageServiceError.GMSTokenIsNotSet" = "Не установлено значение токена Global Message Service";
 "GlobalMessageServiceError.GCMTokenIsNotSet" = "Отсутствует токен Google Cloud Messaging";
+"GlobalMessageServiceError.NoPhoneOrEmailPassed" = "Необходимо указать электронный адрес или телефон";
 "GlobalMessageServiceError.UnknownError" = "Неизвестная ошибк";

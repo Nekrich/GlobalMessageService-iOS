@@ -45,9 +45,6 @@ internal class GlobalMessageServiceHelper {
 
 public extension GlobalMessageService {
   
-  /// `GlobalMessageService.framework` bundle. (read-only)
-  public static let bundle = NSBundle(forClass: GlobalMessageService.self)
-  
   /// An instance of `GlobalMessageServiceHelper`
   internal static let helper = GlobalMessageServiceHelper()
   

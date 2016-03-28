@@ -14,6 +14,8 @@
 		804B4FDB1C7DD9490006AA8C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804B4FDA1C7DD9490006AA8C /* MapKit.framework */; };
 		804B4FDD1C7DD94F0006AA8C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804B4FDC1C7DD94F0006AA8C /* CoreData.framework */; };
 		804B4FDF1C7DD9580006AA8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804B4FDE1C7DD9580006AA8C /* UIKit.framework */; };
+		8083BF5F1CA92915004240A9 /* GlobalMessageService+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083BF5E1CA92915004240A9 /* GlobalMessageService+Localization.swift */; };
+		8083BF631CA935B0004240A9 /* GlobalMessageServiceHelper+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083BF621CA935AF004240A9 /* GlobalMessageServiceHelper+Validation.swift */; };
 		809A13C41C6CA7A900CB3977 /* GlobalMessageService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809A13B91C6CA7A900CB3977 /* GlobalMessageService.framework */; };
 		809A13C91C6CA7A900CB3977 /* GlobalMessageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13C81C6CA7A900CB3977 /* GlobalMessageServiceTests.swift */; };
 		809A14061C6CA88F00CB3977 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13D61C6CA88F00CB3977 /* NSManagedObject+Extension.swift */; };
@@ -86,6 +88,8 @@
 		804B4FDA1C7DD9490006AA8C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		804B4FDC1C7DD94F0006AA8C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		804B4FDE1C7DD9580006AA8C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8083BF5E1CA92915004240A9 /* GlobalMessageService+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GlobalMessageService+Localization.swift"; sourceTree = "<group>"; };
+		8083BF621CA935AF004240A9 /* GlobalMessageServiceHelper+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GlobalMessageServiceHelper+Validation.swift"; sourceTree = "<group>"; };
 		809A13B91C6CA7A900CB3977 /* GlobalMessageService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalMessageService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		809A13C31C6CA7A900CB3977 /* GlobalMessageServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlobalMessageServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		809A13C81C6CA7A900CB3977 /* GlobalMessageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMessageServiceTests.swift; sourceTree = "<group>"; };
@@ -353,6 +357,8 @@
 				809A13D41C6CA88F00CB3977 /* CoreData */,
 				809A13E01C6CA88F00CB3977 /* Extensions */,
 				809A13E41C6CA88F00CB3977 /* GlobalMessageService.swift */,
+				8083BF621CA935AF004240A9 /* GlobalMessageServiceHelper+Validation.swift */,
+				8083BF5E1CA92915004240A9 /* GlobalMessageService+Localization.swift */,
 				809A13E51C6CA88F00CB3977 /* GlobalMessageServiceGMSDelegate.swift */,
 				809A13E61C6CA88F00CB3977 /* GlobalMessageServiceHelper.swift */,
 				809A13E71C6CA88F00CB3977 /* GlobalMessageServiceHelper+RemoteNotifications.swift */,
@@ -560,6 +566,7 @@
 				80ADC5841C9048BC006C285D /* Syncronized.swift in Sources */,
 				809A14061C6CA88F00CB3977 /* NSManagedObject+Extension.swift in Sources */,
 				809A14071C6CA88F00CB3977 /* NSManagedObjectContext+Extension.swift in Sources */,
+				8083BF631CA935B0004240A9 /* GlobalMessageServiceHelper+Validation.swift in Sources */,
 				809A14211C6CA88F00CB3977 /* GMSPushNotification+LocalNotification.swift in Sources */,
 				809A14251C6CA88F00CB3977 /* GMSProvider+POST.swift in Sources */,
 				80AE624C1C7F3E7900FE12D8 /* GMSInboxFetchedDate.swift in Sources */,
@@ -576,6 +583,7 @@
 				809A14151C6CA88F00CB3977 /* GlobalMessageServiceHelper+RemoteNotifications.swift in Sources */,
 				809A14131C6CA88F00CB3977 /* GlobalMessageServiceGMSDelegate.swift in Sources */,
 				80AE624B1C7F3E7900FE12D8 /* GMSInboxFetchedDate+CoreDataProperties.swift in Sources */,
+				8083BF5F1CA92915004240A9 /* GlobalMessageService+Localization.swift in Sources */,
 				80A984AB1C847D7D00AF64AD /* GlobalMessageServiceMessageJSQ.swift in Sources */,
 				809A14101C6CA88F00CB3977 /* NSDate+Extension.swift in Sources */,
 				809A14091C6CA88F00CB3977 /* GMSInboxFetchedDate+Extension.swift in Sources */,

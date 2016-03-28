@@ -64,13 +64,13 @@ public final class GlobalMessageServiceMessagesFetcher {
       // swiftlint:disable empty_count
       if let fetchedMessages = fetchedDate.messages where fetchedMessages.count > 0 {
         // swiftlint:enable empty_count
-        messages = fetchedMessages.allObjects as? [GMSInboxMessage] ?? []
+        messages = (fetchedMessages.allObjects as? [GMSInboxMessage])?.filter { !$0.deletionMark } ?? []
       } else {
         messages = []
       }
       gmsMessages = messages
-        .filter({!$0.deletionMark})
-        .flatMap() { GlobalMessageServiceMessage(message: $0) }
+        .filter { !$0.deletionMark }
+        .flatMap { GlobalMessageServiceMessage(message: $0) }
       
       if fetchedDate.lastMessageDate == date.endOfDay().timeIntervalSinceReferenceDate {
         completion?(.Success(gmsMessages))
@@ -274,7 +274,7 @@ public final class GlobalMessageServiceMessagesFetcher {
       }
       
       let messages = incomeMessages
-        .flatMap() { GlobalMessageServiceMessage(dictionary: $0, andType: type) }
+        .flatMap { GlobalMessageServiceMessage(dictionary: $0, andType: type) }
       
       GlobalMessageServiceMessagesFetcher.saveMessages(
         messages,
@@ -355,7 +355,7 @@ public final class GlobalMessageServiceMessagesFetcher {
       completion(.Failure(.MessageFetcherError(.CoreDataSaveError(error as NSError))))
       break
     case .Success:
-      completion(.Success(messages.filter({ deletedMessages.indexOf($0) == .None })))
+      completion(.Success(messages.filter { deletedMessages.indexOf($0) == .None }))
       break
     }
   }
