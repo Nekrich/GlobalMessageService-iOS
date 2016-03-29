@@ -5,45 +5,23 @@
   Created by Vitalii Budnik on 2/16/16.
   Copyright © 2016 Global Message Services Worldwide. All rights reserved.
 */
-/*
-"GlobalMessageServiceApplicationRegistrationError.ProviderError" = "HTTP request error: %@";
-"GlobalMessageServiceApplicationRegistrationError.ProviderUnknownError" = "Data refresh unknown error";
-"GlobalMessageServiceApplicationRegistrationError.NoAppDeviceId" = "No requested Global Message Service token";
-"GlobalMessageServiceApplicationRegistrationError.AppDeviceIdWrondType" = "Wrong Global Message Service token type";
-"GlobalMessageServiceApplicationRegistrationError.AppDeviceIdLessOrEqualZero" = "Global Message Service token less or equal zero";
-"GlobalMessageServiceApplicationRegistrationError.AddSubscriberInProgress" = "Another task in progress: add subscriber";
-"GlobalMessageServiceApplicationRegistrationError.UpdateSubscriberInProgress" = "Another task in progress: update subscriber info";
-"GlobalMessageServiceApplicationRegistrationError.UpdateGCMTokenInProgress" = "Another task in progress: update Google Cloud Messaging token";
-"GlobalMessageServiceApplicationRegistrationError.UpdateGCMTokenInProgress" = "UnknownError";
 
-
-"GlobalMessageServiceApplicationError.ProviderError" = "HTTP request error: %@";
-"GlobalMessageServiceApplicationError.ProviderUnknownError" = "Data refresh unknown error";
-"GlobalMessageServiceApplicationError.GMSTokenIsNotSet" = "Global Message Service token is not set";
-"GlobalMessageServiceApplicationError.GCMTokenIsNotSet" = "No Google Cloud Messaging token";
-"GlobalMessageServiceApplicationError.ApplicationRegistrationError" = "Registration error: %@";
-
-"GlobalMessageServiceProviderResultParsingError.AlamofireError" = "%@";
-"GlobalMessageServiceProviderResultParsingError.AlamofireUnknownError" = "HTTP request unknown error";
-"GlobalMessageServiceProviderResultParsingError.CantRepresentResultAsDictionary" = "Wrong result format";
-"GlobalMessageServiceProviderResultParsingError.NoStatus" = "No operation status flag";
-"GlobalMessageServiceProviderResultParsingError.StatusIsFalse" = "Failed. %@";
-"GlobalMessageServiceProviderResultParsingError.UnknownError" = "Result parser error";
-*/
 "MessageFetcher.NoPhone" = "Subscriber has no phone number";
 "MessageFetcher.CoreDataSaveError" = "%@. Can't save messages";
 
 "Request.Error" = "HTTP request error: %@";
 "Request.UnknownError" = "HTTP request unknown error";
+"Request.ParametersSerializationError" = "An error occurred when serializing HTTP request parameters: %@";
 
 "ResultParsing.CantRepresentResultAsDictionary" = "Wrong result format";
 "ResultParsing.NoStatus" = "No operation status flag";
 "ResultParsing.StatusIsFalse" = "Failed. %@";
-"ResultParsing.UnknownError" = "Result parser error";
+"ResultParsing.UnknownError" = "Unknown result parsing error";
+"ResultParsing.JSONSerializationError" = "Result parsing error: %@";
 
-"AddSubscriber.NoAppDeviceId" = "No requested Global Message Service token";
-"AddSubscriber.AppDeviceIdWrondType" = "Wrong Global Message Service token type";
-"AddSubscriber.AppDeviceIdLessOrEqualZero" = "Global Message Service token less or equal zero";
+"Subscriber.NoAppDeviceId" = "No requested Global Message Service token";
+"Subscriber.AppDeviceIdWrondType" = "Wrong Global Message Service token type";
+"Subscriber.AppDeviceIdLessOrEqualZero" = "Global Message Service token less or equal zero";
 
 "AnotherTaskInProgress.AddSubscriber" = "Another task in progress: add subscriber";
 "AnotherTaskInProgress.UpdateSubscriber" = "Another task in progress: update subscriber info";

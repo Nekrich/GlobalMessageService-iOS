@@ -6,6 +6,10 @@
 //  Copyright © 2016 Global Message Services Worldwide. All rights reserved.
 //
 
+import Foundation
+import UIKit
+import JSQMessagesViewController
+
 /**
 Shows delivered `GlobalMessageServiceMessage`s
 */
@@ -82,7 +86,7 @@ public class GlobalMessageServiceInboxViewController: JSQMessagesViewController 
     
     JSQMessagesCollectionViewCell.registerMenuAction(#selector(NSObject.delete(_:)))
     
-    self.showLoadEarlierMessagesHeader = self.fetcher.hasMorePrevious
+    showLoadEarlierMessagesHeader = fetcher.hasMorePrevious
     
     fetcher.delegate = self
     
@@ -103,6 +107,14 @@ public class GlobalMessageServiceInboxViewController: JSQMessagesViewController 
     hideInputToolbar()
     
     fetchTodaysMesages(false)
+    
+  }
+  
+  /// Data source for `JSQMessagesCollectionView`
+  var dataSource: [GlobalMessageServiceMessageJSQ] {
+    get {
+      return fetcher.messages
+    }
   }
   
   /// Stops auto-fetch delivered messages timer
@@ -147,7 +159,7 @@ public class GlobalMessageServiceInboxViewController: JSQMessagesViewController 
   private func reloadViews() {
     collectionView?.visibleCells().forEach { (cell) -> () in
       guard let indexPath = collectionView?.indexPathForCell(cell) else { return }
-      let date = fetcher.messages[indexPath.item].date()
+      let date = dataSource[indexPath.item].date()
       addTimeLabelToCell(cell, withDate: date)
     }
   }
@@ -205,8 +217,8 @@ public class GlobalMessageServiceInboxViewController: JSQMessagesViewController 
     if indexPath.item == 0 {
       return true
     } else {
-      let message = fetcher.messages[indexPath.item]
-      let previousMessage = fetcher.messages[indexPath.item - 1]
+      let message = dataSource[indexPath.item]
+      let previousMessage = dataSource[indexPath.item - 1]
       if previousMessage.date().startOfDay().timeIntervalSinceReferenceDate
         != message.date().startOfDay().timeIntervalSinceReferenceDate // swiftlint:disable:this opening_brace
       {
@@ -315,13 +327,13 @@ public extension GlobalMessageServiceInboxViewController {
   {
     let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath)
     
-    self.addTimeLabelToCell(cell, withDate: fetcher.messages[indexPath.item].date())
+    self.addTimeLabelToCell(cell, withDate: dataSource[indexPath.item].date())
     
     if let cell = cell as? JSQMessagesCollectionViewCell,
       let cellTextView = cell.textView // swiftlint:disable:this opening_brace
     {
       cellTextView.userInteractionEnabled = false
-      let message = fetcher.messages[indexPath.item]
+      let message = dataSource[indexPath.item]
       if message.type == .PushNotification {
         cellTextView.textColor = pushBubbleTextColor
       } else if message.type == .SMS {
@@ -338,7 +350,7 @@ public extension GlobalMessageServiceInboxViewController {
     messageDataForItemAtIndexPath indexPath: NSIndexPath!)
     -> JSQMessageData! // swiftlint:disable:this opening_brace
   {
-    return fetcher.messages[indexPath.item]
+    return dataSource[indexPath.item]
   }
   
   override public func collectionView(
@@ -346,7 +358,7 @@ public extension GlobalMessageServiceInboxViewController {
     numberOfItemsInSection section: Int)
     -> Int // swiftlint:disable:this opening_brace
   {
-    return fetcher.messages.count
+    return dataSource.count
   }
 
 }
@@ -359,7 +371,9 @@ public extension GlobalMessageServiceInboxViewController {
     messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!)
     -> JSQMessageBubbleImageDataSource! // swiftlint:disable:this opening_brace
   {
-    let message = fetcher.messages[indexPath.item]
+    
+    let message = dataSource[indexPath.item]
+    
     switch message.type {
     case .PushNotification:
       return pushBubbleImageView
@@ -368,6 +382,7 @@ public extension GlobalMessageServiceInboxViewController {
     case .Viber:
       return viberBubbleImageView
     }
+    
   }
   
   override public func collectionView(
@@ -409,7 +424,7 @@ public extension GlobalMessageServiceInboxViewController {
     attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!)
     -> NSAttributedString! // swiftlint:disable:this opening_brace
   {
-    let message = fetcher.messages[indexPath.item]
+    let message = dataSource[indexPath.item]
     let messageDate: NSDate?
     if previousMessageForIndexPathIsWithAnotherDate(indexPath) {
       messageDate = message.date().startOfDay()
@@ -447,7 +462,7 @@ public extension GlobalMessageServiceInboxViewController {
     attributedTextForCellBottomLabelAtIndexPath indexPath: NSIndexPath!)
     -> NSAttributedString! // swiftlint:disable:this opening_brace
   {
-    let message = fetcher.messages[indexPath.item]
+    let message = dataSource[indexPath.item]
     let alphaNameAttributedString = NSAttributedString(
       string: message.alphaName + ". " + message.type.description,
       attributes: alphaNameFormatAttributes)
@@ -517,3 +532,59 @@ extension GlobalMessageServiceInboxViewController: GlobalMessageServiceMessageFe
   }
   
 }
+
+//extension GlobalMessageServiceInboxViewController: UISearchResultsUpdating {
+//  
+//  private func filterPresentedData(withText text: String?, 
+// forScope scope: GlobalMessageServiceMessageType? = .None) {
+//    
+//    automaticallyScrollsToMostRecentMessage = true
+//    
+//    let searchText = text?.lowercaseString ?? ""
+//    
+//    let words = searchText.componentsSeparatedByString(" ").filter( { !$0.isEmpty })
+//    
+//    if ((searchText.isEmpty && scope == .None) || words.count == 0) 
+// && (selectedSearchMessageType == .None) {
+//      filteredMessages = fetcher.messages
+//      collectionView.reloadData()
+//      return
+//    }
+//    
+//    filteredMessages = fetcher.messages.filter { message -> Bool in
+//      var acceptable: Bool = words.count == 0
+//      for searchText in words {
+//        if message.alphaName.lowercaseString.containsString(searchText) {
+//          acceptable = true
+//        }
+//        if let text = message.text() where text.lowercaseString.containsString(searchText) {
+//          acceptable = true
+//        }
+//      }
+//      if let scope = scope where acceptable {
+//        acceptable = acceptable && message.type == scope
+//      }
+//      return acceptable
+//    }
+//    collectionView.reloadData()
+//  }
+//  
+//  public func updateSearchResultsForSearchController(searchController: UISearchController) {
+//    filterPresentedData(withText: searchController.searchBar.text, forScope: selectedSearchMessageType)
+//  }
+//  
+//}
+//
+//extension GlobalMessageServiceInboxViewController: UISearchBarDelegate {
+//  public func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+//    //let selectedCategory: PlaceCategory?
+//    if selectedScope < 1 {
+//      selectedSearchMessageType = .None
+//    } else if (selectedScope - 1) < selectedSearchMessageTypes.count {
+//      selectedSearchMessageType = selectedSearchMessageTypes[selectedScope - 1]
+//    } else {
+//      selectedSearchMessageType = .None
+//    }
+//    self.filterPresentedData(withText: searchController.searchBar.text, forScope: selectedSearchMessageType)
+//  }
+//}

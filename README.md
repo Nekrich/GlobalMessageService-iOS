@@ -22,7 +22,7 @@ pre_install do |installer|
   def installer.verify_no_static_framework_transitive_dependencies; end
 end
 
-pod 'GlobalMessageService', :git => 'https://github.com/GlobalMessageServicesAG/GlobalMessageService-iOS.git', :tag => '0.0.3'
+pod 'GlobalMessageService', :git => 'https://github.com/GlobalMessageServicesAG/GlobalMessageService-iOS.git', :tag => '0.0.4'
 ```
 
 Then, run the following command:
@@ -80,7 +80,7 @@ To add new subscriber you should call
 GlobalMessageService.addSubscriber(
   email: String,
   phone: Int64?,
-  completionHandler: ((Result<UInt, GlobalMessageServiceError>) -> Void)? = .None)
+  completionHandler: ((GlobalMessageServiceResult<UInt>) -> Void)? = .None)
 ```
 In completion handler result you will get GlobalMessageService subscriber ID if success
 
@@ -90,7 +90,7 @@ To edit subscriber information you should call
 GlobalMessageService.updateSubscriberInfo(
   email: String,
   phone: Int64?,
-  completionHandler: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None)
+  completionHandler: ((GlobalMessageServiceResult<Void>) -> Void)? = .None)
 ```
 In completion handler result you will get success `Bool` flag
 
@@ -98,21 +98,21 @@ Update subscriber's location
 ```swift
 GlobalMessageService.updateSubscriberLocation(
   location: CLLocation?,
-  completionHandler: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None)
+  completionHandler: ((GlobalMessageServiceResult<Void>) -> Void)? = .None)
 ```
 
 Update subscriber's changed Google cloud messages token
 ```swift
 GlobalMessageService.updateGCMToken(
   token: String?,
-  completionHandler: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None)
+  completionHandler: ((GlobalMessageServiceResult<Void>) -> Void)? = .None)
 ```
 
 Update subscriber can receive push-notifications flag
 ```swift
 GlobalMessageService.allowRecievePush(
   allowPush: Bool,
-  completionHandler: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None)
+  completionHandler: ((GlobalMessageServiceResult<Void>) -> Void)? = .None)
 ```
 
 #### Get delivered messages
@@ -120,7 +120,7 @@ To fetch delivered messages call
 ```swift
 GlobalMessageService.fetchMessages(
   forDate: NSDate,
-  completionHandler: ((Result<[GlobalMessageServiceMessage], GlobalMessageServiceError>) -> Void)? = .None)
+  completionHandler: ((GlobalMessageServiceResult<[GlobalMessageServiceMessage]>) -> Void)? = .None)
 ```
 Example
 ```swift
@@ -136,7 +136,6 @@ GlobalMessageService.fetchMessages(forDate: someDate) { result in
 #### GlobalMessageService application key
 Contact [Global Message Services](http://www.gms-worldwide.com/en/kontakty.html)
 
-
 #### Google Cloud Messaging (push-notifications)
 [Enable Google Cloud Messaging API](https://console.developers.google.com/apis/api/googlecloudmessaging/) for you project
 
@@ -150,8 +149,6 @@ Google Cloud Messaging Sender ID is your Project number that you can get in [Goo
 [LICENSE]: LICENSE
 
 #### 3rdparties
-[Alamofire](https://github.com/Alamofire/Alamofire) by [Alamofire Software Foundation](http://alamofire.org/). [MIT license](https://github.com/Alamofire/Alamofire/blob/master/LICENSE)
-
 [XCGLogger](https://github.com/DaveWoodCom/XCGLogger) by [Dave Wood](https://twitter.com/DaveWoodX). [MIT license](https://github.com/DaveWoodCom/XCGLogger/blob/master/LICENSE.txt)
 
 [Google Cloud Messaging](https://github.com/google/gcm/blob/master/LICENSE)

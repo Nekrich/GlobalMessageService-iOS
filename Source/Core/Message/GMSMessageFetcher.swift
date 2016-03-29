@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreData
-import Alamofire
 
 /**
  `Class` fetches delivered messages from Global Message Services servers
@@ -33,7 +32,7 @@ public final class GlobalMessageServiceMessagesFetcher {
   public class func fetchMessages(
     forDate date: NSDate,
     fetch: Bool = true,
-    completionHandler: ((Result<[GlobalMessageServiceMessage], GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler: ((GlobalMessageServiceResult<[GlobalMessageServiceMessage]>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     let completion = completionHandlerInMainThread(completionHandler)
@@ -114,7 +113,7 @@ public final class GlobalMessageServiceMessagesFetcher {
   
   /**
    Fetches `.Viber` messages from Global Message Services servers
-   - Parameter date: `NSTimeInterval` concrete time interval 
+   - Parameter date: `NSTimeInterval` concrete time interval
    *since 00:00:00 UTC on 1 January 2001* for which you need to get messages
    - Parameter completionHandler: The code to be executed once the request has finished. (optional). 
    This block takes no parameters. 
@@ -123,14 +122,14 @@ public final class GlobalMessageServiceMessagesFetcher {
    */
   private class func fetchViber(
     forDate date: NSTimeInterval,
-    completionHandler completion: (Result<[GlobalMessageServiceMessage], GlobalMessageServiceError>) -> Void) // swiftlint:disable:this line_length
+    completionHandler completion: (GlobalMessageServiceResult<[GlobalMessageServiceMessage]>) -> Void) // swiftlint:disable:this line_length
   {
     fetch(.Viber, date: date, completionHandler: completion)
   }
   
   /**
    Fetches `.SMS` messages from Global Message Services servers
-   - Parameter date: `NSTimeInterval` concrete time interval 
+   - Parameter date: `NSTimeInterval` concrete time interval
    *since 00:00:00 UTC on 1 January 2001* for which you need to get messages
    - Parameter completionHandler: The code to be executed once the request has finished. (optional). 
    This block takes no parameters. 
@@ -139,14 +138,14 @@ public final class GlobalMessageServiceMessagesFetcher {
    */
   private class func fetchSMS(
     forDate date: NSTimeInterval,
-    completionHandler completion: (Result<[GlobalMessageServiceMessage], GlobalMessageServiceError>) -> Void) // swiftlint:disable:this line_length
+    completionHandler completion: (GlobalMessageServiceResult<[GlobalMessageServiceMessage]>) -> Void) // swiftlint:disable:this line_length
   {
     fetch(.SMS, date: date, completionHandler: completion)
   }
   
   /**
    Gets recieved push-notification from `GMSInboxFetchedDate`
-   - Parameter date: `NSTimeInterval` concrete time interval 
+   - Parameter date: `NSTimeInterval` concrete time interval
    *since 00:00:00 UTC on 1 January 2001* for which you need to get messages
    - Parameter completionHandler: The code to be executed once the request has finished. (optional). 
    This block takes no parameters. 
@@ -155,7 +154,7 @@ public final class GlobalMessageServiceMessagesFetcher {
    */
   private class func fetchPushNotifications(
     forDate date: NSTimeInterval,
-    completionHandler completion: (Result<[GlobalMessageServiceMessage], GlobalMessageServiceError>) -> Void) // swiftlint:disable:this line_length
+    completionHandler completion: (GlobalMessageServiceResult<[GlobalMessageServiceMessage]>) -> Void) // swiftlint:disable:this line_length
   {
     
     completion(.Success(getPushNotifications(forDate: date)))
@@ -164,7 +163,7 @@ public final class GlobalMessageServiceMessagesFetcher {
   
   /**
    Gets recieved push-notification from `GMSInboxFetchedDate`
-   - Parameter date: `NSTimeInterval` concrete time interval 
+   - Parameter date: `NSTimeInterval` concrete time interval
    *since 00:00:00 UTC on 1 January 2001* for which you need to get messages
    - Returns: An array of recieved `GlobalMessageServiceMessage`s
    */
@@ -185,7 +184,7 @@ public final class GlobalMessageServiceMessagesFetcher {
   /**
    Fetches messages of concrete type from Global Message Services servers
    - Parameter type: `GlobalMessageServiceMessageType` concrete type of messages which you need to get
-   - Parameter date: `NSTimeInterval` concrete time interval 
+   - Parameter date: `NSTimeInterval` concrete time interval
    *since 00:00:00 UTC on 1 January 2001* for which you need to get messages
    - Parameter completionHandler: The code to be executed once the request has finished. (optional). 
    This block takes no parameters. 
@@ -195,7 +194,7 @@ public final class GlobalMessageServiceMessagesFetcher {
   private class func fetch(
     type: GlobalMessageServiceMessageType,
     date: NSTimeInterval,
-    completionHandler completion: (Result<[GlobalMessageServiceMessage], GlobalMessageServiceError>) -> Void) // swiftlint:disable:this line_length
+    completionHandler completion: (GlobalMessageServiceResult<[GlobalMessageServiceMessage]>) -> Void) // swiftlint:disable:this line_length
   {
     
     let errorCompletion: (GlobalMessageServiceError) -> Void = { error in
@@ -245,7 +244,7 @@ public final class GlobalMessageServiceMessagesFetcher {
   /**
    Fetches messages of concrete type from Global Message Services servers
    - Parameter type: `GlobalMessageServiceMessageType` concrete type of messages which you need to get
-   - Parameter date: `NSTimeInterval` concrete time interval 
+   - Parameter date: `NSTimeInterval` concrete time interval
    *since 00:00:00 UTC on 1 January 2001* for which you need to get messages
    - Parameter requestTime: `NSTimeInterval` *since 00:00:00 UTC on 1 January 2001* when request was sended
    - Parameter completionHandler: The code to be executed once the request has finished. (optional). 
@@ -259,8 +258,8 @@ public final class GlobalMessageServiceMessagesFetcher {
     type: GlobalMessageServiceMessageType,
     date: NSTimeInterval,
     requestTime: NSTimeInterval,
-    completionHandler completion: (Result<[GlobalMessageServiceMessage], GlobalMessageServiceError>) -> Void)
-    -> (Response<[String : AnyObject], GlobalMessageServiceError>) -> Void  // swiftlint:disable:this line_length
+    completionHandler completion: (GlobalMessageServiceResult<[GlobalMessageServiceMessage]>) -> Void)
+    -> (GlobalMessageServiceResult<[String : AnyObject]>) -> Void  // swiftlint:disable:this line_length
   {
     return { response in
       
@@ -299,7 +298,7 @@ public final class GlobalMessageServiceMessagesFetcher {
     messages: [GlobalMessageServiceMessage],
     date: NSTimeInterval,
     requestTime: NSTimeInterval,
-    completionHandler completion: (Result<[GlobalMessageServiceMessage], GlobalMessageServiceError>) -> Void) // swiftlint:disable:this line_length
+    completionHandler completion: (GlobalMessageServiceResult<[GlobalMessageServiceMessage]>) -> Void) // swiftlint:disable:this line_length
   {
     
     let managedObjectContext = GlobalMessageServiceCoreDataHelper.newManagedObjectContext()

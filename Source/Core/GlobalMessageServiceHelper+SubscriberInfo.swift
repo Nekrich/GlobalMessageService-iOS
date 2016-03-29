@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Alamofire
+import UIKit
 
 /** Makes pased clousure running in main thread
  - Parameter completion: async closure that must be runned in main thread later
@@ -48,13 +48,13 @@ private extension GlobalMessageServiceHelper {
    - parameter email: `String` containing subscriber's e-mail address
    - parameter phone: `Int64?` containing subscriber's phone number. Can be `nil`
    - parameter completionHandler: The code to be executed once the request has finished. (optional). 
-   This block takes no parameters. Returns `Result` `<Bool, GlobalMessageServiceError>`, 
-   where `result.value` is always `true` if there no error occurred, otherwise see `result.error`
+   This block takes no parameters. Returns `Result` `<Void, GlobalMessageServiceError>`,
+   where `result.error` contains `GlobalMessageServiceError` if any error occurred
    */
   private func updateSubscriberInfo(
     email email: String?,
     phone: Int64?,
-    completionHandler completion: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<Void>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     if !canPreformAction(true, completion) {
@@ -82,15 +82,15 @@ private extension GlobalMessageServiceHelper {
     
     updateSubscriberInfoTask = GMSProvider.sharedInstance.POST(
       "lib_update_phone_email",
-      parameters: requestParameters) { response in
+      parameters: requestParameters) { result in
         
         if GlobalMessageService.registeredUser?.phone != phone {
           GlobalMessageServiceCoreDataHelper.managedObjectContext.deleteObjectctsOfAllEntities()
         }
         
-        guard let _: [String: AnyObject] = response.result.value else {
+        guard let _: [String: AnyObject] = result.value else {
           self.updateSubscriberInfoTask = .None
-          completion?(.Failure(response.result.error ?? .UnknownError))
+          completion?(.Failure(result.error ?? .UnknownError))
           return
         }
         
@@ -98,7 +98,7 @@ private extension GlobalMessageServiceHelper {
         
         self.updateSubscriberInfoTask = .None
 
-        completion?(.Success(true))
+        completion?(.Success())
         
     }
   }
@@ -116,7 +116,7 @@ private extension GlobalMessageServiceHelper {
   private func addSubscriber(
     email email: String?,
     phone: Int64?,
-    completionHandler completion: ((Result<UInt64, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<UInt64>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     if !canPreformAction(completion) {
@@ -151,26 +151,26 @@ private extension GlobalMessageServiceHelper {
     
     addSubscriberTask = GMSProvider.sharedInstance.POST(
       "lib_add_abonent",
-      parameters: requestParameters) { response in
+      parameters: requestParameters) { result in
         
-        guard let json: [String: AnyObject] = response.result.value else {
+        guard let json: [String: AnyObject] = result.value else {
           self.addSubscriberTask = .None
-          completion?(.Failure(response.result.error ?? .UnknownError))
+          completion?(.Failure(result.error ?? .UnknownError))
           return
         }
         
         guard let uniqAppDeviceId = json["uniqAppDeviceId"] else {
-          completion?(.Failure(.AddSubscriberError(.NoAppDeviceId)))
+          completion?(.Failure(.SubscriberError(.NoAppDeviceId)))
           return
         }
         
         guard let newGMSDeviceID = uniqAppDeviceId as? Double else {
-          completion?(.Failure(.AddSubscriberError(.AppDeviceIdWrondType)))
+          completion?(.Failure(.SubscriberError(.AppDeviceIdWrondType)))
           return
         }
         
         if newGMSDeviceID <= 0 {
-          completion?(.Failure(.AddSubscriberError(.AppDeviceIdLessOrEqualZero)))
+          completion?(.Failure(.SubscriberError(.AppDeviceIdLessOrEqualZero)))
           return
         }
         
@@ -195,7 +195,7 @@ private extension GlobalMessageServiceHelper {
    otherwise see `result.error`
    */
   private func getSubscribersProfile(
-    completionHandler completion: ((Result<UInt64, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<UInt64>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     if !canPreformAction(true, completion) {
       return
@@ -205,9 +205,9 @@ private extension GlobalMessageServiceHelper {
     
     GMSProvider.sharedInstance.POST(
       "get_profile",
-      parameters: ["uniqAppDeviceId":gmsToken]) { response in
+      parameters: ["uniqAppDeviceId":gmsToken]) { result in
         
-        guard let json = response.result.value else {
+        guard let json = result.value else {
           completion?(.Success(GlobalMessageService.registeredGMStoken))
           return
         }
@@ -235,7 +235,7 @@ internal extension GlobalMessageServiceHelper {
    - returns: `true` if all checks passed, `false` otherwise
    */
   private func canPreformAction<T>(
-    completion: ((Result<T, GlobalMessageServiceError>) -> Void)? = .None)
+    completion: ((GlobalMessageServiceResult<T>) -> Void)? = .None)
     -> Bool // swiftlint:disable:this opening_brace
   {
     return canPreformAction(false, completion)
@@ -252,12 +252,12 @@ private extension GlobalMessageServiceHelper {
    - parameter allowPush: `Bool`. `true` - allow recieve remote push notification, 
    `false` - deny recieve remote push notification
    - parameter completionHandler: The code to be executed once the request has finished. (optional). 
-   This block takes no parameters. Returns `Result` `<Bool, GlobalMessageServiceError>`, 
-   where `result.value` is always `true` if there no error occurred, otherwise see `result.error`
+   This block takes no parameters. Returns `Result` `<Void, GlobalMessageServiceError>`,
+   where `result.error` contains `GlobalMessageServiceError` if any error occurred
    */
   private func allowRecievePush(
     allowPush: Bool,
-    completionHandler completion: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<Void>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     if !canPreformAction(completion) {
@@ -286,7 +286,7 @@ private extension GlobalMessageServiceHelper {
           return
         }
         
-        completion?(.Success(true))
+        completion?(.Success())
     }
     
   }
@@ -302,12 +302,12 @@ public extension GlobalMessageService {
    - parameter allowPush: `Bool`. `true` - allow recieve remote push notification, 
    `false` - deny recieve remote push notification
    - parameter completionHandler: The code to be executed once the request has finished. (optional). 
-   This block takes no parameters. Returns `Result` `<Bool, GlobalMessageServiceError>`, 
-   where `result.value` is always `true` if there no error occurred, otherwise see `result.error`
+   This block takes no parameters. Returns `Result` `<Void, GlobalMessageServiceError>`,
+   where `result.error` contains `GlobalMessageServiceError` if any error occurred
    */
   public static func allowRecievePush(
     allowPush: Bool,
-    completionHandler completion: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<Void>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     helper.allowRecievePush(
@@ -329,7 +329,7 @@ public extension GlobalMessageService {
   public static func addSubscriber(
     email email: String?,
     phone: Int64?,
-    completionHandler completion: ((Result<UInt64, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<UInt64>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     helper.addSubscriber(
@@ -345,13 +345,13 @@ public extension GlobalMessageService {
    - parameter email: `String` containing subscriber's e-mail address
    - parameter phone: `Int64?` containing subscriber's phone number. Can be `nil`
    - parameter completionHandler: The code to be executed once the request has finished. (optional). 
-   This block takes no parameters. Returns `Result` `<Bool, GlobalMessageServiceError>`, 
-   where `result.value` is always `true` if there no error occurred, otherwise see `result.error`
+   This block takes no parameters. Returns `Result` `<Void, GlobalMessageServiceError>`, 
+   where `result.error` contains `GlobalMessageServiceError` if any error occurred
    */
   public static func updateSubscriberInfo(
     email email: String?,
     phone: Int64?,
-    completionHandler completion: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<Void>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     helper.updateSubscriberInfo(

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 //import GoogleCloudMessaging
 
 /**
@@ -20,10 +19,10 @@ internal class GlobalMessageServiceHelper {
   private var applicationKey: String? = .None
   
   /// A pointer to currently running addSubscriber `Request`. (internal)
-  internal var addSubscriberTask: Request? = .None
+  internal var addSubscriberTask: NSURLSessionTask? = .None
   
   /// A pointer to currently running updateSubscriberInfo `Request`. (internal)
-  internal var updateSubscriberInfoTask: Request? = .None
+  internal var updateSubscriberInfoTask: NSURLSessionTask? = .None
   
   /// A pointer to currently running updateGCMToken `Request`. (internal)
   //internal var updateGCMTokenTask: Request? = .None

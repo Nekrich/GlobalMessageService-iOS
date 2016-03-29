@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 internal extension GlobalMessageServiceHelper {
 
@@ -20,7 +19,7 @@ internal extension GlobalMessageServiceHelper {
    */
   internal func canPreformAction<T>(
     checkGMStoken: Bool,
-    _ completion: ((Result<T, GlobalMessageServiceError>) -> Void)? = .None)
+    _ completion: ((GlobalMessageServiceResult<T>) -> Void)? = .None)
     -> Bool // swiftlint:disable:this opening_brace
   {
     
@@ -108,7 +107,7 @@ internal extension GlobalMessageServiceHelper {
   func validateEmail<T>(
     email: String?,
     phone: Int64?,
-    completionHandler completion: ((Result<T, GlobalMessageServiceError>) -> Void)?)
+    completionHandler completion: ((GlobalMessageServiceResult<T>) -> Void)?)
     -> Bool // swiftlint:disable:this opening_brace
   {
     

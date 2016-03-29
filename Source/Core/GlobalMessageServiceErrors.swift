@@ -21,8 +21,8 @@ public protocol CustomLocalizedDescriptionConvertible {
  - RequestError: A HTTP request error. Contains `GlobalMessageServiceError.Request`
  - ResultParsingError: An error occured when parsing result. Contains 
 `GlobalMessageServiceError.ResultParsing`
- - AddSubscriberError: An error occured when adding new subscriber. 
-Contains `GlobalMessageServiceError.AddSubscriber`
+ - SubscriberError: An error occured when adding new subscriber. 
+Contains `GlobalMessageServiceError.Subscriber`
  - AnotherTaskInProgressError: Another task in progress error. 
 Contains `GlobalMessageServiceError.AnotherTaskInProgress`
  - MessageFetcherError: Error occurred when retrieving messages. Contains 
@@ -40,8 +40,8 @@ public enum GlobalMessageServiceError: ErrorType {
   /// An error occured when parsing result. Contains `GlobalMessageServiceError.ResultParsing`
   case ResultParsingError(ResultParsing)
   
-  /// An error occured when adding new subscriber. Contains `GlobalMessageServiceError.AddSubscriber`
-  case AddSubscriberError(AddSubscriber)
+  /// An error occured when adding new subscriber. Contains `GlobalMessageServiceError.Subscriber`
+  case SubscriberError(Subscriber)
   
   /// Another task in progress error. Contains `GlobalMessageServiceError.AnotherTaskInProgress`
   case AnotherTaskInProgressError(AnotherTaskInProgress)
@@ -74,7 +74,7 @@ public enum GlobalMessageServiceError: ErrorType {
     case ResultParsingError(let error):
       enumPresentation = error.localizedTemplate
       break
-    case AddSubscriberError(let error):
+    case SubscriberError(let error):
       enumPresentation = error.localizedTemplate
       break
     case AnotherTaskInProgressError(let error):
@@ -103,7 +103,7 @@ public enum GlobalMessageServiceError: ErrorType {
     case ResultParsingError(let error):
       localizedString = error.localizedDescription
       break
-    case AddSubscriberError(let error):
+    case SubscriberError(let error):
       localizedString = error.localizedDescription
       break
     case AnotherTaskInProgressError(let error):
@@ -118,6 +118,7 @@ public enum GlobalMessageServiceError: ErrorType {
     }
     return localizedString
   }
+  
 }
 
 // MARK: - GlobalMessageServiceError.AnotherTaskInProgress
@@ -165,7 +166,7 @@ public extension GlobalMessageServiceError {
   
 }
 
-// MARK: - GlobalMessageServiceError.AddSubscriber
+// MARK: - GlobalMessageServiceError.Subscriber
 public extension GlobalMessageServiceError {
   
   /**
@@ -175,7 +176,7 @@ public extension GlobalMessageServiceError {
    - AppDeviceIdWrondType: Can't convert recieved `uniqAppDeviceId` to `UInt64`
    - AppDeviceIdLessOrEqualZero: Recieved `uniqAppDeviceId` is `0` or less
    */
-  public enum AddSubscriber: ErrorType, CustomLocalizedDescriptionConvertible {
+  public enum Subscriber: ErrorType, CustomLocalizedDescriptionConvertible {
     
     /// here is no expexted `uniqAppDeviceId` field in response data
     case NoAppDeviceId
@@ -190,7 +191,7 @@ public extension GlobalMessageServiceError {
     private var localizedTemplate: String {
       let enumPresentation: String = "\(self)"
       return GlobalMessageService.bundle.localizedStringForKey(
-        "AddSubscriber.\(enumPresentation)",
+        "Subscriber.\(enumPresentation)",
         value: .None,
         table: "GlobalMessageServiceErrors")
     }
@@ -216,22 +217,31 @@ public extension GlobalMessageServiceError {
   /**
    Enum represents response parsing errors
    
-   - CantRepresentResultAsDictionary: Request returned response `NSData`, 
+   - CantRepresentResultAsDictionary: Request returned response `NSData`,
    that can't be represented as `[String: AnyObject]`
+   - JSONSerializationError: Request returned response `NSData`, that can't be serialized to JSON.
+   Contains `NSError?` - description of error, that occurred on serialization attempt
    - NoStatus: There is no expexted `status` flag in response data
-   - StatusIsFalse: `status` flag in response data is `false`. 
+   - StatusIsFalse: `status` flag in response data is `false`.
    Contains `String?` - description of error, that occurred on a remote server
    - UnknownError: Unknown error occurred when parsing response
    */
   public enum ResultParsing: ErrorType, CustomLocalizedDescriptionConvertible {
+    
     /// Request returned response `NSData`, that can't be represented as `[String: AnyObject]`
     case CantRepresentResultAsDictionary
+    
+    /**
+     Request returned response `NSData`, that can't be serialized to JSON.
+     Contains `NSError?` - description of error, that occurred on serialization attempt
+     */
+    case JSONSerializationError(NSError)
     
     /// There is no expexted `status` flag in response data
     case NoStatus
     
     /**
-     `status` flag in response data is `false`. Contains `String?` - description of error, 
+     `status` flag in response data is `false`. Contains `String?` - description of error,
      that occurred on a remote server
      */
     case StatusIsFalse(String?)
@@ -280,12 +290,17 @@ public extension GlobalMessageServiceError {
    Enum represents request errors
    
    - Error: Request failed. Contains a pointer to `NSError` object.
+   - ParametersSerializationError: Failed to serialize parameters, passed to request.
+   Contains a pointer to `NSError` object.
    - UnknownError: Request failed but there is no any represenative error
    */
   public enum Request: ErrorType, CustomLocalizedDescriptionConvertible {
     
     /// Request failed. Contains a pointer to `NSError` object.
     case Error(NSError)
+    
+    /// Failed to serialize parameters, passed to request. Contains a pointer to `NSError` object.
+    case ParametersSerializationError(NSError)
     
     /// Request failed but there is no any represenative error
     case UnknownError
@@ -296,6 +311,9 @@ public extension GlobalMessageServiceError {
       switch self {
       case Error:
         enumPresentation = "Error"
+        break
+      case ParametersSerializationError:
+        enumPresentation = "ParametersSerializationError"
         break
       default:
         enumPresentation = "\(self)"
@@ -312,6 +330,9 @@ public extension GlobalMessageServiceError {
       let localizedString: String
       switch self {
       case Error(let error):
+        localizedString = String(format: localizedTemplate, error.localizedDescription)
+        break
+      case ParametersSerializationError(let error):
         localizedString = String(format: localizedTemplate, error.localizedDescription)
         break
       default:
@@ -373,4 +394,5 @@ public extension GlobalMessageServiceError {
       return localizedString
     }
   }
+  
 }

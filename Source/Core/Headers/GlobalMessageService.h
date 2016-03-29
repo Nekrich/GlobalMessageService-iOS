@@ -6,10 +6,7 @@
 //
 //
 
-#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-#import <MapKit/MapKit.h>
 
 //! Project version number for GlobalMessageService.
 FOUNDATION_EXPORT double GlobalMessageServiceVersionNumber;
@@ -17,8 +14,8 @@ FOUNDATION_EXPORT double GlobalMessageServiceVersionNumber;
 //! Project version string for GlobalMessageService.
 FOUNDATION_EXPORT const unsigned char GlobalMessageServiceVersionString[];
 
-#if __has_include("JSQMessagesViewController/JSQMessages.h")
-  @import JSQMessagesViewController;
-//  #import <JSQMessagesViewController/JSQMessages.h>
-//  #import <JSQMessagesViewController/JSQMessageData.h>
+#if defined(__has_include) && __has_include("JSQMessagesViewController/JSQMessagesViewController.h")
+  //#if defined(__has_include) && __has_include(<swift/objc-prologue.h>)
+@import JSQMessagesViewController;
+@import JSQSystemSoundPlayer;
 #endif

@@ -3,8 +3,7 @@ use_frameworks!
 
 target 'GlobalMessageService' do
     pod 'Google/CloudMessaging'
-    pod 'Alamofire', '~> 3.2.1'
-    pod 'XCGLogger', '~> 3.2'
+    pod 'XCGLogger', '~> 3.3'
     pod 'JSQMessagesViewController', '~> 7.2'
     pod 'DZNEmptyDataSet', '~> 1.7.3'
 end
@@ -18,4 +17,3 @@ end
 #target 'GlobalMessageServiceTests' do
 
 #end
-

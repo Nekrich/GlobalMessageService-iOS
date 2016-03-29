@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 import XCGLogger
 
 internal extension GMSProvider {
@@ -44,7 +43,7 @@ internal extension GMSProvider {
   internal func POST(
     urlString: String,
     parameters: [String : AnyObject])
-    -> Request // swiftlint:disable:this opening_brace
+    -> NSURLSessionTask? // swiftlint:disable:this opening_brace
   {
     
     return POST(.MobilePlatform, urlString, parameters: parameters)
@@ -62,35 +61,33 @@ internal extension GMSProvider {
     restProvider: RESTProvider,
     urlString: String,
     parameters: [String : AnyObject])
-    -> Request // swiftlint:disable:this opening_brace
+    -> NSURLSessionTask? // swiftlint:disable:this opening_brace
   {
     
-    return manager.request(
-      .POST,
-      NSURL(string: urlString, relativeToURL: restProvider.URL())!,
-      parameters: parameters,
-      encoding: ParameterEncoding.JSON)
+    return POST(NSURL(string: urlString, relativeToURL: restProvider.URL())!, parameters: parameters)
     
   }
   
-  // swiftlint:disable line_length
+  
 
   /**
    POSTs request to specifyed relative URL string of MobilePlatform REST API with parameters
+   
    - Parameter urlString: The URL string relative to MobilePlatform URL
    - Parameter parameters: The parameters
-   - Parameter checkStatus: `Bool` that indicates to check `"status"` flag in JSON response. Default: `true`
+   - Parameter checkStatus: `Bool` that indicates to check `"status"` flag in JSON response. 
+   Default: `true`
    - Parameter completionHandler: The code to be executed once the request has finished.
+   
    - Returns: The created `Request`
    */
   internal func POST(
     urlString: String,
     parameters: [String : AnyObject]?,
     checkStatus: Bool = true,
-    completionHandler completion: (Response<[String : AnyObject], GlobalMessageServiceError> -> Void)? = .None)
-    -> Request // swiftlint:disable:this opening_brace
+    completionHandler completion: (GlobalMessageServiceResult<[String : AnyObject]> -> Void)? = .None)
+    -> NSURLSessionTask? // swiftlint:disable:this opening_brace
   {
-    // swiftlint:enable line_length
     
     return POST(
       .MobilePlatform,
@@ -101,23 +98,27 @@ internal extension GMSProvider {
     
   }
   
-  // swiftlint:disable line_length
+
   /**
    POSTs request to specifyed relative URL string of REST API provider with parameters
+   
    - Parameter restProvider: The REST API provider
    - Parameter urlString: The URL string relative to REST API provider URL
    - Parameter parameters: The parameters
-   - Parameter checkStatus: `Bool` that indicates to check `"status"` flag in JSON response. Default: `true`
+   - Parameter checkStatus: `Bool` that indicates to check `"status"` flag in JSON response. 
+   Default: `true`
    - Parameter completionHandler: The code to be executed once the request has finished.
+   
    - Returns: The created `Request`
+   
    */
   internal func POST(
     restProvider: RESTProvider,
     _ urlString: String,
     parameters: [String : AnyObject]?,
     checkStatus: Bool = true,
-    completionHandler completion: (Response<[String : AnyObject], GlobalMessageServiceError> -> Void)? = .None)
-    -> Request // swiftlint:disable:this opening_brace
+    completionHandler completion: (GlobalMessageServiceResult<[String : AnyObject]> -> Void)? = .None)
+    -> NSURLSessionTask? // swiftlint:disable:this opening_brace
   {
     
     return POST(
@@ -131,83 +132,132 @@ internal extension GMSProvider {
   
   /**
    POSTs request to specifyed relative URL with parameters
+   
    - Parameter url: The URL
    - Parameter parameters: The parameters
-   - Parameter checkStatus: `Bool` that indicates to check `"status"` flag in JSON response. Default: `true`
+   - Parameter checkStatus: `Bool` that indicates to check `"status"` flag in JSON response. 
+   Default: `true`
    - Parameter completionHandler: The code to be executed once the request has finished.
+   
    - Returns: The created `Request`
    */
   private func POST(
     url: NSURL,
     parameters: [String : AnyObject]?,
     checkStatus: Bool = true,
-    completionHandler completion: (Response<[String : AnyObject], GlobalMessageServiceError> -> Void)?)
-    -> Request // swiftlint:disable:this opening_brace
+    completionHandler completion: (GlobalMessageServiceResult<[String : AnyObject]> -> Void)? = .None)
+    -> NSURLSessionTask? // swiftlint:disable:this opening_brace
   {
-    
-    let request = manager.request(
-      .POST,
-      url,
-      parameters: parameters,
-      encoding: ParameterEncoding.JSON)//,
-      //headers: GMSProvider.defaultHTTPAdditionalHeaders)
-      .validate()
-    
-    gmsLog.verbose("\nrequest:\n\(request.debugDescription)\n")
-    
-    let postCompletionHandler: Response<[String : AnyObject], GlobalMessageServiceError> -> Void
-    postCompletionHandler = { response in
-      
-      gmsLog.verbose("\nANSWER request:\n\(request.debugDescription)\nresponse:\n\(response)")
-      
-      let errorCompletion: (GlobalMessageServiceError) -> Void = { error in
-        let response = Response(
-          request: response.request,
-          response: response.response,
-          data: response.data,
-          result: Result<[String : AnyObject], GlobalMessageServiceError>.Failure(error)
-        )
         
-        completion?(response)
+    guard let request = self.request(url, parameters: parameters).value(completion) else {
+      return .None
+    }
+    
+    let dataTask = session.dataTaskWithRequest(request) { (data, response, error) in
+      
+      guard let json = self.JSONdataTaskResult(data, response, error, checkStatus: checkStatus)
+        .value(completion) else {
+        return
       }
       
-      guard let _ = response.result.value else { errorCompletion(response.result.error!); return }
-      
-      completion?(response)
+      completion?(.Success(json))
       
     }
     
-    let serializer: ResponseSerializer<[String : AnyObject], GlobalMessageServiceError>
+    dataTask.resume()
     
-    if checkStatus {
-      serializer = GlobalMessageServiceJSONResponseSerializers.JSONResponseSerializer_checkStatusFlag()
-    } else {
-      serializer =  GlobalMessageServiceJSONResponseSerializers.JSONResponseSerializer()
-    }
-    
-    return request.response(
-      queue: queue,
-      responseSerializer: serializer,
-      completionHandler: postCompletionHandler)
+    return dataTask
     
   }
   
   /**
-   POSTs request to specifyed relative URL with parameters
-   - Parameter url: The URL
-   - Parameter parameters: The parameters
-   - Returns: The created `Request`
+   Serializes result of `NSURLSession.dataTaskWithRequest`
+   
+   - parameter data:        The data returned by the server.
+   - parameter response:    A `NSHTTPURLResponse` that provides response metadata, such as 
+   HTTP headers and status code.
+   - parameter error:       An error object that indicates why the request failed, 
+   or nil if the request was successful.
+   - parameter checkStatus: `Bool` that indicates to check `"status"` flag in JSON response. 
+   Default: `true`
+   
+   - returns: `GlobalMessageServiceResult` containing serialized JSON (`[String : AnyObject]]`)
    */
-  private func POST(
-    url: NSURL,
-    parameters: [String : AnyObject]?)
-    -> Request // swiftlint:disable:this opening_brace
+  private func JSONdataTaskResult(
+    data: NSData?,
+    _ response: NSURLResponse?,
+    _ error: NSError?,
+    checkStatus: Bool = true)
+    -> GlobalMessageServiceResult<[String : AnyObject]> // swiftlint:disable:this opening_brace
   {
-    return manager.request(
-      .POST,
-      url,
-      parameters: parameters,
-      encoding: ParameterEncoding.JSON)
+    
+    guard let data = data else {
+      if let error = error {
+        return .Failure(.RequestError(.Error(error)))
+      } else {
+        return .Failure(.RequestError(.UnknownError))
+      }
+    }
+    
+    let json: [String: AnyObject]
+    do {
+      let dataObject = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+      guard let serializedDataObject = dataObject as? [String: AnyObject] else {
+        return .Failure(.ResultParsingError(.CantRepresentResultAsDictionary))
+      }
+      json = serializedDataObject
+    } catch {
+      return .Failure(.ResultParsingError(.JSONSerializationError(error as NSError)))
+    }
+    
+    if checkStatus {
+      
+      guard let status = json["status"] as? Bool else {
+        return .Failure(.ResultParsingError(.NoStatus))
+      }
+      
+      if !status {
+        return .Failure(.ResultParsingError(.StatusIsFalse(json["response"] as? String)))
+      }
+      
+    }
+    
+    return .Success(json)
+    
+  }
+  
+  /**
+   Creates `NSURLRequest`
+   
+   - parameter URL:        The URL
+   - parameter parameters: The parameters for `NSURLRequest`
+   
+   - returns: `GlobalMessageServiceResult<NSURLRequest>`
+   */
+  private func request(URL: NSURL,
+    parameters: [String : AnyObject]?)
+    -> GlobalMessageServiceResult<NSURLRequest> // swift:lint:disable:this opening_brace
+  {
+    let request = NSMutableURLRequest(URL: URL)
+    request.HTTPMethod = "POST"
+    
+    guard let parameters = parameters else {
+      return .Success(request)
+    }
+    
+    do {
+      let jsonData = try NSJSONSerialization.dataWithJSONObject(parameters, options: [])
+      request.HTTPBody = jsonData
+      
+      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+      
+    } catch {
+      gmsLog.error("\(error as NSError)")
+      
+      return .Failure(.RequestError(.ParametersSerializationError(error as NSError)))
+    }
+    
+    return .Success(request)
   }
   
 }

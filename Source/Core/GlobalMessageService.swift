@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 /**
  Main `GlobalMessageService.framework` facade class
