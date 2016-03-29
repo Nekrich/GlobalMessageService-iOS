@@ -12,7 +12,7 @@ import CoreData
 extension GMSInboxMessage: NSManagedObjectSearchable {
   /**
    Sets `fetchedDate` into object
-   - parameter deliveredDateDay: `NSTimeInterval` for date from 00:00:00 UTC on 1 January 2001. 
+   - parameter deliveredDateDay: `NSTimeInterval` for date from 00:00:00 UTC on 1 January 2001.
    (optional. If not passed uses `self.deliveredDate`)
    */
   internal func setFethcedDate(deliveredDateDay: NSTimeInterval? = .None) {

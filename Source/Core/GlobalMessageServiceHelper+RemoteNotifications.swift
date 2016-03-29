@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /**
  The delegate of a `GlobalMessageService` object must adopt the 

@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43E06CC59ACD85B8681DD5A8 /* Pods_GlobalMessageService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E685DD458B7D6EDC3C17F9 /* Pods_GlobalMessageService.framework */; };
 		8001D1F81C7314D300636645 /* GlobalMessageServiceErrors.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8001D1FA1C7314D300636645 /* GlobalMessageServiceErrors.strings */; };
+		802239971CAA5CEA002A7D79 /* GlobalMessageServicesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802239961CAA5CE9002A7D79 /* GlobalMessageServicesResult.swift */; };
+		8022399D1CAACF1E002A7D79 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8022399C1CAACF1E002A7D79 /* CoreLocation.framework */; };
 		804B4FB31C7DABCC0006AA8C /* GlobalMessageServiceHelper+SubscribersLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B4FB21C7DABCC0006AA8C /* GlobalMessageServiceHelper+SubscribersLocation.swift */; };
 		804B4FB51C7DACA50006AA8C /* GlobalMessageServiceHelper+GCMToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B4FB41C7DACA50006AA8C /* GlobalMessageServiceHelper+GCMToken.swift */; };
 		804B4FD91C7DD5C30006AA8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C3A6061C75D585007721CA /* Foundation.framework */; };
-		804B4FDB1C7DD9490006AA8C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804B4FDA1C7DD9490006AA8C /* MapKit.framework */; };
 		804B4FDD1C7DD94F0006AA8C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804B4FDC1C7DD94F0006AA8C /* CoreData.framework */; };
 		804B4FDF1C7DD9580006AA8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804B4FDE1C7DD9580006AA8C /* UIKit.framework */; };
+		8083BF5F1CA92915004240A9 /* GlobalMessageService+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083BF5E1CA92915004240A9 /* GlobalMessageService+Localization.swift */; };
+		8083BF631CA935B0004240A9 /* GlobalMessageServiceHelper+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083BF621CA935AF004240A9 /* GlobalMessageServiceHelper+Validation.swift */; };
 		809A13C41C6CA7A900CB3977 /* GlobalMessageService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809A13B91C6CA7A900CB3977 /* GlobalMessageService.framework */; };
 		809A13C91C6CA7A900CB3977 /* GlobalMessageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13C81C6CA7A900CB3977 /* GlobalMessageServiceTests.swift */; };
 		809A14061C6CA88F00CB3977 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13D61C6CA88F00CB3977 /* NSManagedObject+Extension.swift */; };
@@ -21,7 +25,6 @@
 		809A14081C6CA88F00CB3977 /* GlobalMessageServiceCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13D81C6CA88F00CB3977 /* GlobalMessageServiceCoreDataHelper.swift */; };
 		809A14091C6CA88F00CB3977 /* GMSInboxFetchedDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13D91C6CA88F00CB3977 /* GMSInboxFetchedDate+Extension.swift */; };
 		809A140A1C6CA88F00CB3977 /* GMSInboxMessage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13DA1C6CA88F00CB3977 /* GMSInboxMessage+Extension.swift */; };
-		809A140F1C6CA88F00CB3977 /* AlamofireResponse+GMSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13E11C6CA88F00CB3977 /* AlamofireResponse+GMSExtension.swift */; };
 		809A14101C6CA88F00CB3977 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13E21C6CA88F00CB3977 /* NSDate+Extension.swift */; };
 		809A14111C6CA88F00CB3977 /* NSFileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13E31C6CA88F00CB3977 /* NSFileManager+Extensions.swift */; };
 		809A14121C6CA88F00CB3977 /* GlobalMessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A13E41C6CA88F00CB3977 /* GlobalMessageService.swift */; };
@@ -42,7 +45,6 @@
 		809A14241C6CA88F00CB3977 /* GlobalMessageServicesInbox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 809A13FC1C6CA88F00CB3977 /* GlobalMessageServicesInbox.xcdatamodeld */; };
 		809A14251C6CA88F00CB3977 /* GMSProvider+POST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A14001C6CA88F00CB3977 /* GMSProvider+POST.swift */; };
 		809A14261C6CA88F00CB3977 /* GMSProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A14011C6CA88F00CB3977 /* GMSProvider.swift */; };
-		809A14271C6CA88F00CB3977 /* GMSProviderMobilePlatformJSONResponseSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A14021C6CA88F00CB3977 /* GMSProviderMobilePlatformJSONResponseSerializers.swift */; };
 		809A14281C6CA88F00CB3977 /* GlobalMessageService+SettingsOnTopLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A14041C6CA88F00CB3977 /* GlobalMessageService+SettingsOnTopLevel.swift */; };
 		809A14291C6CA88F00CB3977 /* GMSSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A14051C6CA88F00CB3977 /* GMSSettings.swift */; };
 		80A984A91C847D3500AF64AD /* GlobalMessageServiceMessageFetcherJSQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A984A81C847D3500AF64AD /* GlobalMessageServiceMessageFetcherJSQ.swift */; };
@@ -57,7 +59,6 @@
 		80AE62501C7F3E7900FE12D8 /* GMSInboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AE624A1C7F3E7900FE12D8 /* GMSInboxMessage.swift */; };
 		80AE62521C7F3EF200FE12D8 /* GMSInboxAlphaName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AE62511C7F3EF200FE12D8 /* GMSInboxAlphaName+Extension.swift */; };
 		80AE62551C7F4D9800FE12D8 /* GlobalMessageServiceInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AE62541C7F4D9800FE12D8 /* GlobalMessageServiceInboxViewController.swift */; };
-		B35347362758167AA323746B /* Pods_GlobalMessageService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60464311EE87935E5BA99AC5 /* Pods_GlobalMessageService.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,21 +72,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		392C725ECDAA26842D38B76C /* Pods-GlobalMessageService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalMessageService.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlobalMessageService/Pods-GlobalMessageService.release.xcconfig"; sourceTree = "<group>"; };
-		60464311EE87935E5BA99AC5 /* Pods_GlobalMessageService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobalMessageService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E685DD458B7D6EDC3C17F9 /* Pods_GlobalMessageService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobalMessageService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F37A2E51B3298786575D826 /* Pods-GlobalMessageService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalMessageService.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlobalMessageService/Pods-GlobalMessageService.release.xcconfig"; sourceTree = "<group>"; };
 		8001D1F91C7314D300636645 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GlobalMessageServiceErrors.strings; sourceTree = "<group>"; };
 		8020502E1CA3D95B00B09F69 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		8020502F1CA3D95B00B09F69 /* GlobalMessageService.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GlobalMessageService.podspec; path = ../GlobalMessageService.podspec; sourceTree = "<group>"; };
+		8020502F1CA3D95B00B09F69 /* GlobalMessageService.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GlobalMessageService.podspec; path = ../GlobalMessageService.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		802050301CA3D95B00B09F69 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		802050311CA3D95B00B09F69 /* makedoc.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = makedoc.sh; path = ../makedoc.sh; sourceTree = "<group>"; };
 		802050361CA4016800B09F69 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/GMSLocalizable.strings; sourceTree = "<group>"; };
 		802050381CA401D600B09F69 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/GlobalMessageServiceErrors.strings; sourceTree = "<group>"; };
 		802050391CA4052600B09F69 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/GlobalMessageServiceErrors.strings; sourceTree = "<group>"; };
+		802239961CAA5CE9002A7D79 /* GlobalMessageServicesResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMessageServicesResult.swift; sourceTree = "<group>"; };
+		8022399C1CAACF1E002A7D79 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		804B4FB21C7DABCC0006AA8C /* GlobalMessageServiceHelper+SubscribersLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GlobalMessageServiceHelper+SubscribersLocation.swift"; sourceTree = "<group>"; };
 		804B4FB41C7DACA50006AA8C /* GlobalMessageServiceHelper+GCMToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GlobalMessageServiceHelper+GCMToken.swift"; sourceTree = "<group>"; };
 		804B4FDA1C7DD9490006AA8C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		804B4FDC1C7DD94F0006AA8C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		804B4FDE1C7DD9580006AA8C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8083BF5E1CA92915004240A9 /* GlobalMessageService+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GlobalMessageService+Localization.swift"; sourceTree = "<group>"; };
+		8083BF621CA935AF004240A9 /* GlobalMessageServiceHelper+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GlobalMessageServiceHelper+Validation.swift"; sourceTree = "<group>"; };
 		809A13B91C6CA7A900CB3977 /* GlobalMessageService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalMessageService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		809A13C31C6CA7A900CB3977 /* GlobalMessageServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlobalMessageServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		809A13C81C6CA7A900CB3977 /* GlobalMessageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMessageServiceTests.swift; sourceTree = "<group>"; };
@@ -95,7 +100,6 @@
 		809A13D81C6CA88F00CB3977 /* GlobalMessageServiceCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMessageServiceCoreDataHelper.swift; sourceTree = "<group>"; };
 		809A13D91C6CA88F00CB3977 /* GMSInboxFetchedDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GMSInboxFetchedDate+Extension.swift"; sourceTree = "<group>"; };
 		809A13DA1C6CA88F00CB3977 /* GMSInboxMessage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GMSInboxMessage+Extension.swift"; sourceTree = "<group>"; };
-		809A13E11C6CA88F00CB3977 /* AlamofireResponse+GMSExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AlamofireResponse+GMSExtension.swift"; sourceTree = "<group>"; };
 		809A13E21C6CA88F00CB3977 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		809A13E31C6CA88F00CB3977 /* NSFileManager+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+Extensions.swift"; sourceTree = "<group>"; };
 		809A13E41C6CA88F00CB3977 /* GlobalMessageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMessageService.swift; sourceTree = "<group>"; };
@@ -118,7 +122,6 @@
 		809A13FE1C6CA88F00CB3977 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/GMSLocalizable.strings; sourceTree = "<group>"; };
 		809A14001C6CA88F00CB3977 /* GMSProvider+POST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GMSProvider+POST.swift"; sourceTree = "<group>"; };
 		809A14011C6CA88F00CB3977 /* GMSProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSProvider.swift; sourceTree = "<group>"; };
-		809A14021C6CA88F00CB3977 /* GMSProviderMobilePlatformJSONResponseSerializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSProviderMobilePlatformJSONResponseSerializers.swift; sourceTree = "<group>"; };
 		809A14041C6CA88F00CB3977 /* GlobalMessageService+SettingsOnTopLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GlobalMessageService+SettingsOnTopLevel.swift"; sourceTree = "<group>"; };
 		809A14051C6CA88F00CB3977 /* GMSSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSSettings.swift; sourceTree = "<group>"; };
 		80A984A81C847D3500AF64AD /* GlobalMessageServiceMessageFetcherJSQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMessageServiceMessageFetcherJSQ.swift; sourceTree = "<group>"; };
@@ -136,7 +139,7 @@
 		80C3A6061C75D585007721CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		80E213E31C805A7C00AD44F1 /* Chatto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chatto.framework; path = "Pods/../build/Debug-iphoneos/Chatto.framework"; sourceTree = "<group>"; };
 		80E213E51C805A7F00AD44F1 /* ChattoAdditions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChattoAdditions.framework; path = "Pods/../build/Debug-iphoneos/ChattoAdditions.framework"; sourceTree = "<group>"; };
-		A42169DEFB2E27AEEF0821D2 /* Pods-GlobalMessageService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalMessageService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GlobalMessageService/Pods-GlobalMessageService.debug.xcconfig"; sourceTree = "<group>"; };
+		DA0E85F11FC3003057B19B88 /* Pods-GlobalMessageService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalMessageService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GlobalMessageService/Pods-GlobalMessageService.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,11 +147,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8022399D1CAACF1E002A7D79 /* CoreLocation.framework in Frameworks */,
 				804B4FDF1C7DD9580006AA8C /* UIKit.framework in Frameworks */,
 				804B4FDD1C7DD94F0006AA8C /* CoreData.framework in Frameworks */,
-				804B4FDB1C7DD9490006AA8C /* MapKit.framework in Frameworks */,
 				804B4FD91C7DD5C30006AA8C /* Foundation.framework in Frameworks */,
-				B35347362758167AA323746B /* Pods_GlobalMessageService.framework in Frameworks */,
+				43E06CC59ACD85B8681DD5A8 /* Pods_GlobalMessageService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,15 +166,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2DD15BBF76E625DB55928FCE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A42169DEFB2E27AEEF0821D2 /* Pods-GlobalMessageService.debug.xcconfig */,
-				392C725ECDAA26842D38B76C /* Pods-GlobalMessageService.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		802050271CA3D7E400B09F69 /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,16 +177,27 @@
 			name = Metadata;
 			sourceTree = SOURCE_ROOT;
 		};
+		802239981CAA6E49002A7D79 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				809A13FA1C6CA88F00CB3977 /* GMSLocalizable.strings */,
+				8001D1FA1C7314D300636645 /* GlobalMessageServiceErrors.strings */,
+				809A13FC1C6CA88F00CB3977 /* GlobalMessageServicesInbox.xcdatamodeld */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		809A13AF1C6CA7A900CB3977 = {
 			isa = PBXGroup;
 			children = (
 				809A13EF1C6CA88F00CB3977 /* Info.plist */,
 				809A13D31C6CA7F500CB3977 /* Source */,
+				809A13F91C6CA88F00CB3977 /* Resources */,
 				802050271CA3D7E400B09F69 /* Metadata */,
 				809A13C71C6CA7A900CB3977 /* Tests */,
 				809A13BA1C6CA7A900CB3977 /* Products */,
 				EF315B1FD67431C30CA121F7 /* Frameworks */,
-				2DD15BBF76E625DB55928FCE /* Pods */,
+				C5380CCA71FA6C7A10708AFF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,8 +223,8 @@
 		809A13D31C6CA7F500CB3977 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				80AE62531C7F4B0600FE12D8 /* InboxViewController */,
 				80AE625A1C7F64BF00FE12D8 /* Core */,
+				80AE62531C7F4B0600FE12D8 /* InboxViewController */,
 			);
 			name = Source;
 			path = ../Source;
@@ -264,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				80ADC5831C9048BC006C285D /* Syncronized.swift */,
-				809A13E11C6CA88F00CB3977 /* AlamofireResponse+GMSExtension.swift */,
 				809A13E21C6CA88F00CB3977 /* NSDate+Extension.swift */,
 				809A13E31C6CA88F00CB3977 /* NSFileManager+Extensions.swift */,
 			);
@@ -310,20 +314,17 @@
 		809A13F91C6CA88F00CB3977 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				809A13FA1C6CA88F00CB3977 /* GMSLocalizable.strings */,
-				8001D1FA1C7314D300636645 /* GlobalMessageServiceErrors.strings */,
-				809A13FC1C6CA88F00CB3977 /* GlobalMessageServicesInbox.xcdatamodeld */,
+				802239981CAA6E49002A7D79 /* Core */,
 			);
 			name = Resources;
-			path = ../../Resources/Core;
-			sourceTree = "<group>";
+			path = ../Resources;
+			sourceTree = SOURCE_ROOT;
 		};
 		809A13FF1C6CA88F00CB3977 /* REST Provider */ = {
 			isa = PBXGroup;
 			children = (
 				809A14001C6CA88F00CB3977 /* GMSProvider+POST.swift */,
 				809A14011C6CA88F00CB3977 /* GMSProvider.swift */,
-				809A14021C6CA88F00CB3977 /* GMSProviderMobilePlatformJSONResponseSerializers.swift */,
 			);
 			path = "REST Provider";
 			sourceTree = "<group>";
@@ -353,6 +354,9 @@
 				809A13D41C6CA88F00CB3977 /* CoreData */,
 				809A13E01C6CA88F00CB3977 /* Extensions */,
 				809A13E41C6CA88F00CB3977 /* GlobalMessageService.swift */,
+				802239961CAA5CE9002A7D79 /* GlobalMessageServicesResult.swift */,
+				8083BF621CA935AF004240A9 /* GlobalMessageServiceHelper+Validation.swift */,
+				8083BF5E1CA92915004240A9 /* GlobalMessageService+Localization.swift */,
 				809A13E51C6CA88F00CB3977 /* GlobalMessageServiceGMSDelegate.swift */,
 				809A13E61C6CA88F00CB3977 /* GlobalMessageServiceHelper.swift */,
 				809A13E71C6CA88F00CB3977 /* GlobalMessageServiceHelper+RemoteNotifications.swift */,
@@ -365,23 +369,32 @@
 				809A13F01C6CA88F00CB3977 /* Log */,
 				809A13F21C6CA88F00CB3977 /* Message */,
 				809A13F51C6CA88F00CB3977 /* PushNotification */,
-				809A13F91C6CA88F00CB3977 /* Resources */,
 				809A13FF1C6CA88F00CB3977 /* REST Provider */,
 				809A14031C6CA88F00CB3977 /* Settings */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
+		C5380CCA71FA6C7A10708AFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA0E85F11FC3003057B19B88 /* Pods-GlobalMessageService.debug.xcconfig */,
+				5F37A2E51B3298786575D826 /* Pods-GlobalMessageService.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EF315B1FD67431C30CA121F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8022399C1CAACF1E002A7D79 /* CoreLocation.framework */,
 				80E213E51C805A7F00AD44F1 /* ChattoAdditions.framework */,
 				80E213E31C805A7C00AD44F1 /* Chatto.framework */,
 				804B4FDE1C7DD9580006AA8C /* UIKit.framework */,
 				804B4FDC1C7DD94F0006AA8C /* CoreData.framework */,
 				804B4FDA1C7DD9490006AA8C /* MapKit.framework */,
 				80C3A6061C75D585007721CA /* Foundation.framework */,
-				60464311EE87935E5BA99AC5 /* Pods_GlobalMessageService.framework */,
+				00E685DD458B7D6EDC3C17F9 /* Pods_GlobalMessageService.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -404,13 +417,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 809A13CD1C6CA7A900CB3977 /* Build configuration list for PBXNativeTarget "GlobalMessageService" */;
 			buildPhases = (
-				8AFE04CC1FFE1D574D2E5E45 /* Check Pods Manifest.lock */,
+				E2834D3A031018097307CD8F /* 📦 Check Pods Manifest.lock */,
 				809A13B41C6CA7A900CB3977 /* Sources */,
 				809A13B51C6CA7A900CB3977 /* Frameworks */,
 				809A13B61C6CA7A900CB3977 /* Headers */,
 				809A13B71C6CA7A900CB3977 /* Resources */,
 				806C0DD01C7CBA33001395BA /* swiftlint by @realm */,
-				600EB9A23C20F1979CC72244 /* Copy Pods Resources */,
+				279C697C78EC021B5CB72EE0 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -498,14 +511,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		600EB9A23C20F1979CC72244 /* Copy Pods Resources */ = {
+		279C697C78EC021B5CB72EE0 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,14 +540,14 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		8AFE04CC1FFE1D574D2E5E45 /* Check Pods Manifest.lock */ = {
+		E2834D3A031018097307CD8F /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +573,8 @@
 				80ADC5841C9048BC006C285D /* Syncronized.swift in Sources */,
 				809A14061C6CA88F00CB3977 /* NSManagedObject+Extension.swift in Sources */,
 				809A14071C6CA88F00CB3977 /* NSManagedObjectContext+Extension.swift in Sources */,
+				802239971CAA5CEA002A7D79 /* GlobalMessageServicesResult.swift in Sources */,
+				8083BF631CA935B0004240A9 /* GlobalMessageServiceHelper+Validation.swift in Sources */,
 				809A14211C6CA88F00CB3977 /* GMSPushNotification+LocalNotification.swift in Sources */,
 				809A14251C6CA88F00CB3977 /* GMSProvider+POST.swift in Sources */,
 				80AE624C1C7F3E7900FE12D8 /* GMSInboxFetchedDate.swift in Sources */,
@@ -569,19 +584,18 @@
 				80AE62521C7F3EF200FE12D8 /* GMSInboxAlphaName+Extension.swift in Sources */,
 				809A141D1C6CA88F00CB3977 /* GlobalMessageService+Log.swift in Sources */,
 				80AE62501C7F3E7900FE12D8 /* GMSInboxMessage.swift in Sources */,
-				809A140F1C6CA88F00CB3977 /* AlamofireResponse+GMSExtension.swift in Sources */,
 				809A14281C6CA88F00CB3977 /* GlobalMessageService+SettingsOnTopLevel.swift in Sources */,
 				80AE624D1C7F3E7900FE12D8 /* GMSInboxAlphaName+CoreDataProperties.swift in Sources */,
 				809A140A1C6CA88F00CB3977 /* GMSInboxMessage+Extension.swift in Sources */,
 				809A14151C6CA88F00CB3977 /* GlobalMessageServiceHelper+RemoteNotifications.swift in Sources */,
 				809A14131C6CA88F00CB3977 /* GlobalMessageServiceGMSDelegate.swift in Sources */,
 				80AE624B1C7F3E7900FE12D8 /* GMSInboxFetchedDate+CoreDataProperties.swift in Sources */,
+				8083BF5F1CA92915004240A9 /* GlobalMessageService+Localization.swift in Sources */,
 				80A984AB1C847D7D00AF64AD /* GlobalMessageServiceMessageJSQ.swift in Sources */,
 				809A14101C6CA88F00CB3977 /* NSDate+Extension.swift in Sources */,
 				809A14091C6CA88F00CB3977 /* GMSInboxFetchedDate+Extension.swift in Sources */,
 				80AE624F1C7F3E7900FE12D8 /* GMSInboxMessage+CoreDataProperties.swift in Sources */,
 				809A14141C6CA88F00CB3977 /* GlobalMessageServiceHelper.swift in Sources */,
-				809A14271C6CA88F00CB3977 /* GMSProviderMobilePlatformJSONResponseSerializers.swift in Sources */,
 				809A14081C6CA88F00CB3977 /* GlobalMessageServiceCoreDataHelper.swift in Sources */,
 				80AE624E1C7F3E7900FE12D8 /* GMSInboxAlphaName.swift in Sources */,
 				809A14121C6CA88F00CB3977 /* GlobalMessageService.swift in Sources */,
@@ -728,7 +742,7 @@
 		};
 		809A13CE1C6CA7A900CB3977 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A42169DEFB2E27AEEF0821D2 /* Pods-GlobalMessageService.debug.xcconfig */;
+			baseConfigurationReference = DA0E85F11FC3003057B19B88 /* Pods-GlobalMessageService.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -756,7 +770,7 @@
 		};
 		809A13CF1C6CA7A900CB3977 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 392C725ECDAA26842D38B76C /* Pods-GlobalMessageService.release.xcconfig */;
+			baseConfigurationReference = 5F37A2E51B3298786575D826 /* Pods-GlobalMessageService.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Alamofire
+import UIKit
 
 // MARK: - GCM Token
 private extension GlobalMessageServiceHelper {
@@ -17,12 +17,12 @@ private extension GlobalMessageServiceHelper {
    
    - parameter token: `String?` containing Google Cloud Messaging token
    - parameter completionHandler: The code to be executed once the request has finished. (optional).
-   This block takes no parameters. Returns `Result``<Bool, GlobalMessageServiceError>`,
-   where `result.value` is always `true` if there no error occurred, otherwise see `result.error`
+   This block takes no parameters. Returns `Result``<Void, GlobalMessageServiceError>`,
+   where `result.error` contains `GlobalMessageServiceError` if any error occurred
    */
   private func updateGCMToken(
     token: String?,
-    completionHandler completion: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<Void>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     if !canPreformAction(true, completion) {
@@ -72,12 +72,12 @@ public extension GlobalMessageService {
    
    - parameter token: `String?` containing Google Cloud Messaging token
    - parameter completionHandler: The code to be executed once the request has finished. (optional).
-   This block takes no parameters. Returns `Result``<Bool, GlobalMessageServiceError>`,
-   where `result.value` is always `true` if there no error occurred, otherwise see `result.error`
+   This block takes no parameters. Returns `Result``<Void, GlobalMessageServiceError>`,
+   where `result.error` contains `GlobalMessageServiceError` if any error occurred
    */
   public static func updateGCMToken(
     token: String?,
-    completionHandler completion: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<Void>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     helper.updateGCMToken(

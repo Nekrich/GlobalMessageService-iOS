@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 /**
  Generates `POST`s requests to Global Message Services servers
@@ -31,6 +30,7 @@ internal class GMSProvider {
 		sessionConfiguration.requestCachePolicy            = .ReloadIgnoringLocalAndRemoteCacheData
 		sessionConfiguration.timeoutIntervalForRequest     = requestTimeout
     sessionConfiguration.timeoutIntervalForResource    = requestTimeout
+    
 		return sessionConfiguration
 		
 	}()
@@ -38,17 +38,26 @@ internal class GMSProvider {
   /// Private initalizer
 	private init() {
     
-    manager = Alamofire.Manager(configuration: sessionConfiguration)
-		
+    operationQueue = NSOperationQueue()
+    operationQueue.underlyingQueue = queue
+    operationQueue.qualityOfService = .UserInitiated
+    
+		session = NSURLSession(configuration: sessionConfiguration, delegate: .None, delegateQueue: operationQueue)
+    
 	}
   
-  /// Responsible for creating and managing Request objects, as well as their underlying NSURLSession
-  internal let manager: Manager
+  /// Responsible for creating and managing request
+  internal let session: NSURLSession
   
   /// Queue for `manager`s requests
-  internal let queue = dispatch_queue_create(
-    "com.gms-worldwide.manager-response-queue",
-    DISPATCH_QUEUE_CONCURRENT)
+  private let operationQueue: NSOperationQueue
+  
+  /// Queue for `manager`s requests
+  internal let queue: dispatch_queue_t! = {
+    return dispatch_queue_create(
+      "com.gms-worldwide.manager-response-queue",
+      DISPATCH_QUEUE_CONCURRENT)
+  }()
   
 }
 
@@ -64,8 +73,7 @@ internal extension GMSProvider {
   /// A dictionary of additional headers to send with requests in `sessionConfiguration`.
 	static let defaultHTTPAdditionalHeaders: [String : String] = {
 		return [
-			"Authorization" : "app_key=\(GlobalMessageService.applicationKey)",
-			"Content-Type"	: "application/json"
+			"Authorization" : "app_key=\(GlobalMessageService.applicationKey)"
 		]
 	}()
 	

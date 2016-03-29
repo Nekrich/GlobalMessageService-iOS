@@ -126,35 +126,34 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.xcconfig = {
-    'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
-    "OTHER_LDFLAGS" => '-ObjC'
-  }
+  # s.xcconfig = {
+  #   'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+  #   "OTHER_LDFLAGS" => '-ObjC'
+  # }
 
   s.pod_target_xcconfig = {
-    'OTHER_LDFLAGS'          => '$(inherited) -ObjC',
-    'ENABLE_BITCODE'         => 'NO',
-    'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
+    #'OTHER_LDFLAGS'          => '$(inherited) -ObjC',
+    'ENABLE_BITCODE'         => 'NO'
+    # 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
 	}
 
 	s.default_subspec = 'Core'
   s.subspec 'Core' do |core|
     core.resources = 'Resources/Core/*.*'
 		core.source_files = 'Source/Core/**/*.{swift,h}'
-    core.dependency 'XCGLogger', '~> 3.1.1'
-    core.dependency 'Alamofire', '~> 3.3.0'
+    core.dependency 'XCGLogger', '~> 3.3'
 		core.dependency 'Google/CloudMessaging'
 
     core.public_header_files = 'Source/Core/Headers/*.h'
 
-		core.frameworks = "Foundation", "CoreData", "UIKit", "MapKit"
+		core.frameworks = "Foundation", "CoreData", "UIKit", "CoreLocation"
   end
 
 	s.subspec 'Inbox' do |inboxvc|
-		inboxvc.source_files = 'Source/InboxViewController/**/*.{swift,h}'
+		inboxvc.source_files = 'Source/InboxViewController/**/*.{swift}'
 
 		inboxvc.dependency 'GlobalMessageService/Core'
-
+	
 		inboxvc.dependency 'JSQMessagesViewController', '~> 7.2.0'
 		inboxvc.dependency 'DZNEmptyDataSet', '~> 1.7.3'
 

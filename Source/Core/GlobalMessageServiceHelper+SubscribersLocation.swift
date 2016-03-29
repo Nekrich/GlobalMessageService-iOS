@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import Alamofire
-import MapKit
+import CoreLocation
 
 // MARK: - Location update
 private extension GlobalMessageServiceHelper {
@@ -25,12 +24,12 @@ private extension GlobalMessageServiceHelper {
    
    - parameter location: `CLLocation` containing subscriber's location. Can be `nil`
    - parameter completionHandler: The code to be executed once the request has finished. (optional).
-   This block takes no parameters. Returns `Result` `<Bool, GlobalMessageServiceError>`,
-   where `result.value` is always `true` if there no error occurred, otherwise see `result.error`
+   This block takes no parameters. Returns `Result` `<Void, GlobalMessageServiceError>`,
+   where `result.error` contains `GlobalMessageServiceError` if any error occurred
    */
   private func updateSubscriberLocation(
     location: CLLocation?,
-    completionHandler completion: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<Void>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     if !canPreformAction(true, completion) {
@@ -52,7 +51,7 @@ private extension GlobalMessageServiceHelper {
       
       guard !response.isFailure(completion) else { return }
       
-      completion?(.Success(true))
+      completion?(.Success())
       GlobalMessageServiceHelper.lastUpdateLocation = timestamp
     }
     
@@ -67,12 +66,12 @@ public extension GlobalMessageService {
    
    - parameter location: `CLLocation` containing subscriber's location. Can be `nil`
    - parameter completionHandler: The code to be executed once the request has finished. (optional).
-   This block takes no parameters. Returns `Result` `<Bool, GlobalMessageServiceError>`,
-   where `result.value` is always `true` if there no error occurred, otherwise see `result.error`
+   This block takes no parameters. Returns `Result` `<Void, GlobalMessageServiceError>`,
+   where `result.error` contains `GlobalMessageServiceError` if any error occurred
    */
   public static func updateSubscriberLocation(
     location: CLLocation?,
-    completionHandler completion: ((Result<Bool, GlobalMessageServiceError>) -> Void)? = .None) // swiftlint:disable:this line_length
+    completionHandler completion: ((GlobalMessageServiceResult<Void>) -> Void)? = .None) // swiftlint:disable:this line_length
   {
     
     helper.updateSubscriberLocation(

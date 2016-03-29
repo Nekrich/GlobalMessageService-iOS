@@ -174,19 +174,7 @@ internal extension GlobalMessageServiceCoreDataHelper {
     moc.parentContext = managedObjectContext
     return moc
   }
-  
-//  private func getManagedContext(fromManagedContext: NSManagedObjectContext?) -> NSManagedObjectContext {
-//      
-//      let managedContext: NSManagedObjectContext
-//      if fromManagedContext == .None {
-//        managedContext = GlobalMessageServiceCoreDataHelper.newManagedObjectContext()
-//      } else {
-//        managedContext = fromManagedContext!
-//      }
-//      
-//      return managedContext
-//  }
-  
+    
   // Core Data Saving support
   /**
    Attempts to commit unsaved changes in `managedObjectContext`. Recursively for all `parentContext`'s

@@ -5,45 +5,23 @@
   Created by Vitalii Budnik on 2/16/16.
   Copyright © 2016 Global Message Services Worldwide. All rights reserved.
 */
-/*
-"GlobalMessageServiceApplicationRegistrationError.ProviderError" = "Помилка HTTP запиту: %@";
-"GlobalMessageServiceApplicationRegistrationError.ProviderUnknownError" = "Помилка оновлення даних";
-"GlobalMessageServiceApplicationRegistrationError.NoAppDeviceId" = "Не отримано очікуваний токен Global Message Service";
-"GlobalMessageServiceApplicationRegistrationError.AppDeviceIdWrondType" = "Не вірний тип токена Global Message Service";
-"GlobalMessageServiceApplicationRegistrationError.AppDeviceIdLessOrEqualZero" = "Токен Global Message Service менший або дорівнює нулю";
-"GlobalMessageServiceApplicationRegistrationError.AddSubscriberInProgress" = "Виконується інший запит: реєстрація абонента";
-"GlobalMessageServiceApplicationRegistrationError.UpdateSubscriberInProgress" = "Виконується інший запит: оновлення інформації абонента";
-"GlobalMessageServiceApplicationRegistrationError.UpdateGCMTokenInProgress" = "Виконується інший запит: отримання Google Cloud Messaging токену";
-"GlobalMessageServiceApplicationRegistrationError.UpdateGCMTokenInProgress" = "Невідома помилка";
 
-
-"GlobalMessageServiceApplicationError.ProviderError" = "Помилка HTTP запиту: %@";
-"GlobalMessageServiceApplicationError.ProviderUnknownError" = "Помилка оновлення даних";
-"GlobalMessageServiceApplicationError.GMSTokenIsNotSet" = "Не встановлене значення токена Global Message Service";
-"GlobalMessageServiceApplicationError.GCMTokenIsNotSet" = "Немає токена Google Cloud Messaging";
-"GlobalMessageServiceApplicationError.ApplicationRegistrationError" = "Помилка реєстрації: %@";
-
-"GlobalMessageServiceProviderResultParsingError.AlamofireError" = "%@";
-"GlobalMessageServiceProviderResultParsingError.AlamofireUnknownError" = "Невідома помилка HTTP запиту";
-"GlobalMessageServiceProviderResultParsingError.CantRepresentResultAsDictionary" = "Невірний формат відповіді сервера";
-"GlobalMessageServiceProviderResultParsingError.NoStatus" = "No operation status flag";
-"GlobalMessageServiceProviderResultParsingError.StatusIsFalse" = "Помилка. %@";
-"GlobalMessageServiceProviderResultParsingError.UnknownError" = "Помилка розбору відповіді вид сервера";
-*/
 "MessageFetcher.NoPhone" = "У абонента не вказан телефонний номер";
 "MessageFetcher.CoreDataSaveError" = "Помилка при збереженні повідомлення: %@";
 
 "Request.Error" = "Помилка HTTP запиту: %@";
 "Request.UnknownError" = "Невідома помилка HTTP запиту";
+"Request.ParametersSerializationError" = "Виникла помилка серіалізаціі параметрів HTTP запиту: %@";
 
 "ResultParsing.CantRepresentResultAsDictionary" = "Невірний формат відповіді сервера";
 "ResultParsing.NoStatus" = "Відсутній флаг статуса виконаної операції";
 "ResultParsing.StatusIsFalse" = "Помилка. %@";
-"ResultParsing.UnknownError" = "Помилка розбору відповіді від сервера";
+"ResultParsing.UnknownError" = "Невідома помилка розбору відповіді від сервера";
+"ResultParsing.JSONSerializationError" = "Помилка серіалізації відповіді від сервера: %@";
 
-"AddSubscriber.NoAppDeviceId" = "Не отримано очікуваний токен Global Message Service";
-"AddSubscriber.AppDeviceIdWrondType" = "Не вірний тип токена Global Message Service";
-"AddSubscriber.AppDeviceIdLessOrEqualZero" = "Токен Global Message Service менший або дорівнює нулю";
+"Subscriber.NoAppDeviceId" = "Не отримано очікуваний токен Global Message Service";
+"Subscriber.AppDeviceIdWrondType" = "Не вірний тип токена Global Message Service";
+"Subscriber.AppDeviceIdLessOrEqualZero" = "Токен Global Message Service менший або дорівнює нулю";
 
 "AnotherTaskInProgress.AddSubscriber" = "Виконується інший запит: реєстрація абонента";
 "AnotherTaskInProgress.UpdateSubscriber" = "Виконується інший запит: оновлення інформації абонента";
@@ -51,4 +29,5 @@
 
 "GlobalMessageServiceError.GMSTokenIsNotSet" = "Не встановлене значення токена Global Message Service";
 "GlobalMessageServiceError.GCMTokenIsNotSet" = "Немає токена Google Cloud Messaging";
+"GlobalMessageServiceError.NoPhoneOrEmailPassed" = "Потрібно вказати електронну адресу чи телефон";
 "GlobalMessageServiceError.UnknownError" = "Невідома помилка";
